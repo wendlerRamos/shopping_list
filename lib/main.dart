@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:shopping_list/screens/home.dart';
 import 'models/user_model.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-
-void main() => runApp(MyApp());
+void main() {
+  Firestore.instance.collection("teste").document("teste").setData({"teste": "teste"});
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

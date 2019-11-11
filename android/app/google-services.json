@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "456539702084",
+    "firebase_url": "https://shopping-list-e9521.firebaseio.com",
+    "project_id": "shopping-list-e9521",
+    "storage_bucket": "shopping-list-e9521.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456539702084:android:e13518da44a31e94a60d11",
+        "android_client_info": {
+          "package_name": "br.com.wendler.shopping_list"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456539702084-11e77dhjvrq22j4ui08qv4eo5cme6dcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.wendler.shopping_list",
+            "certificate_hash": "e0adaa0a905eecad7f4a21903770cacf3501a55d"
+          }
+        },
+        {
+          "client_id": "456539702084-ka472vdqg6uri96muqlqnlnq57k01rok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLT3oTE7nExkNiWfsVJSzbBhUD__fmU84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456539702084-ka472vdqg6uri96muqlqnlnq57k01rok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/custom_drawer.dart';
 import 'package:shopping_list/widgets/new_list_button.dart';
 import 'package:shopping_list/tabs/home_tab.dart';
+import 'package:shopping_list/tabs/shopping_list_tab.dart';
+
 
 class Home extends StatelessWidget {
 
@@ -27,12 +29,7 @@ class Home extends StatelessWidget {
             centerTitle: true,
           ),
           drawer: CustomDrawer(_pageController),
-          body: Container(
-            color: Colors.red,
-            padding: EdgeInsets.all(4.0),
-            alignment: Alignment.center,
-            child: Text('Buscar Lista'),
-          ),
+          body: ShoppingListTab()
         ),
         Scaffold(
           appBar: AppBar(
