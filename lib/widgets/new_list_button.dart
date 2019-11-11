@@ -8,7 +8,12 @@ class NewListButton extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       child: Icon(Icons.shopping_cart, color: Colors.indigo[50]),
       onPressed: (){
-
+        showDialog(
+          context:context,
+          builder: (context) => Dialog(
+            child: Text("TESTEEEEEEEEEE"),
+          )
+        );
         /*
         Navigator.of(context).push(
             MaterialPageRoute(builder: (context) => CartScreen())
