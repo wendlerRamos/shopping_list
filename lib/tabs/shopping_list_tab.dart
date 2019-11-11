@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/tiles/form_add_tile.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ShoppingListTab extends StatefulWidget {
   @override
   _ShoppingListState createState() => _ShoppingListState();
+  
 
 }
 
@@ -16,6 +18,7 @@ class _ShoppingListState extends State<ShoppingListTab> {
 
   @override
   void initState() {
+    Firestore.instance.collection("teste").document("teste").setData({"teste": "teste"});
     _dropDownMenuItems = getDropDownMenuItems();
     _currentState = _dropDownMenuItems[0].value;
     super.initState();
