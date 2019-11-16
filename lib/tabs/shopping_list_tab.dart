@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/tiles/form_add_tile.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:shopping_list/datas/item_data.dart';
+import 'package:shopping_list/models/item_model.dart';
+import 'package:shopping_list/models/user_model.dart';
 
 class ShoppingListTab extends StatefulWidget {
   @override
@@ -9,10 +12,11 @@ class ShoppingListTab extends StatefulWidget {
 
 class _ShoppingListState extends State<ShoppingListTab> {
   List _option = ["NECESSÁRIO", "DESEJÁVEL"];
-
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   String _currentState;
 
+
+  
   @override
   void initState() {
     Firestore.instance
@@ -143,7 +147,23 @@ class _ShoppingListState extends State<ShoppingListTab> {
                 margin: EdgeInsets.all(4.0),
                 child: Padding(
                   padding: EdgeInsets.all(4.0),
-                  child: Column(children: _createItens()),
+                  child: ScopedModel<ListModel>(
+                    model: ListModel(UserModel()),
+                    child: ScopedModelDescendant<ListModel>(
+                    rebuildOnChange: true,
+                    builder: (context, child, model ){
+                      if(model.isLoading && UserModel.of(context).isLoggedIn()){
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }else{
+                        return Center(
+                          child: Text("Nenhum produto encontrado !", style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor), textAlign: TextAlign.center,),
+                        );
+                      }
+                    },
+                  ),
+                  )
                 ),
               ),
             ],
@@ -153,86 +173,12 @@ class _ShoppingListState extends State<ShoppingListTab> {
     );
   }
 
-  void changedDropDownItem(String selectedCity) {
+  void changedDropDownItem(String selectedItem) {
     //print("Selected city $selectedCity, we are going to refresh the UI");
     setState(() {
-      _currentState = selectedCity;
+      _currentState = selectedItem;
     });
   }
 
-  List<Widget> _createItens() {
-    List<Widget> widgets = [];
-    for (int i = 0; i < 100; i++) {
-      /*
-      widgets.add(Row(
-        children: <Widget>[
-          Expanded(
-            flex: 5,
-            child: Text("Descricao"),
-          ),
-          Expanded(flex: 1, child: Text("XX")),
-          Expanded(flex: 2, child: Text("XXX,XX")),
-          Expanded(
-            flex: 1,
-            child: Icon(Icons.restore_from_trash),
-          ),
-        ],
-      ));
-      */
-      widgets.add(buildItem(context, i));
-    }
-    return widgets;
-  }
-
-    Widget buildItem(context, index) {
-    return Dismissible(
-        key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
-        background: Container(
-          color: Colors.red,
-          child: Align(
-            alignment: Alignment(-0.8, 0.0),
-            child: Icon(Icons.delete, color: Colors.white),
-          ),
-        ),
-        direction: DismissDirection.startToEnd,
-        child: CheckboxListTile(
-          onChanged: (c) {
-            setState(() {
-              
-            });
-          },
-          title: Text("TESTE $index"),
-          value: true,
-          secondary: CircleAvatar(
-            child: Icon(true ? Icons.check : Icons.error),
-          ),
-        ),
-      onDismissed: (direction){
-          setState(() {
-            /*
-            _lastRemoved = Map.from(_toDoList[index]);
-            _lastRemovedPos = index;
-            _toDoList.removeAt(index);
-            _saveData();
-
-            final snack = SnackBar(
-              content: Text('Tarefa ${_lastRemoved['title']} removida !'),
-              action: SnackBarAction(
-                  label: "Desfazer",
-                  onPressed: (){
-                    setState(() {
-                      _toDoList.insert(_lastRemovedPos, _lastRemoved);
-                      _saveData();
-                    });
-                  }
-              ),
-              duration: Duration(seconds: 10),
-            );
-            Scaffold.of(context).removeCurrentSnackBar(); 
-            Scaffold.of(context).showSnackBar(snack);
-            */
-          });
-      },
-    );
-  }
+  
 }
