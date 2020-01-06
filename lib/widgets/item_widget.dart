@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/models/item_model.dart';
 
-class ItemWidget extends StatefulWidget {
-  @override
-  _ItemWidgetState createState() => _ItemWidgetState();
-}
+class ItemWidget extends StatelessWidget {
+  final ItemList itemList;
+  ItemWidget(this.itemList);
 
-class _ItemWidgetState extends State<ItemWidget> {
   @override
   Widget build(BuildContext context) {
-    return buildItem(context, ItemList);
-  }
-
-  Widget buildItem(context, item) {
     return Dismissible(
         key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
         background: Container(
@@ -26,26 +20,21 @@ class _ItemWidgetState extends State<ItemWidget> {
         direction: DismissDirection.startToEnd,
         child: CheckboxListTile(
           onChanged: (c) {
-            setState(() {
-              
-            });
+            
           },
-          value: item.productId,
+          value: itemList.status,
           title:  Text(
-            "${item.name} \t Qt: ${item.qt}", 
+            "${itemList.name} \t Qt: ${itemList.quantity}", 
             style: TextStyle(
-              color: (item.priority == "NECESSARY") ? Colors.blue :  Colors.orange,
+              color: (itemList.priority == "NECESSARIO") ? Colors.blue :  Colors.orange,
             )
           ),
-          //value: true,
           secondary: CircleAvatar(
-            child: Icon(item.status ? Icons.check : Icons.error),
+            child: Icon(itemList.status ? Icons.check : Icons.error),
           ),
         ),
-      onDismissed: (direction){
-          setState(() {
-
-          });
+        onDismissed: (direction){
+          
       },
     );
   }

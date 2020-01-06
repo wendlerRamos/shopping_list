@@ -6,7 +6,7 @@ class ItemList {
   double quantity;
   String priority;
   double maxValue;
-  bool status;
+  bool status = false;
 
   ItemList();
 
@@ -30,6 +30,7 @@ class ItemList {
       "priority" : priority,
       "quantity" : quantity,
       "maxValue" : maxValue,
+      "status" : status,
     };
   }
 }

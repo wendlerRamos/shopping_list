@@ -49,10 +49,12 @@ class ListModel extends Model{
   }
 
   void _loadItens() async {
+    isLoading = true;
     QuerySnapshot query = await Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("shoppingLists").document(listCode).collection('products')
         .getDocuments();
 
     products = query.documents.map((doc) => ItemList.fromDocument(doc)).toList();
+    isLoading = false;
     notifyListeners();
   }
 

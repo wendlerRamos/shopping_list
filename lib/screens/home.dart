@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/tabs/new_shopping_list.dart';
 import 'package:shopping_list/widgets/custom_drawer.dart';
 import 'package:shopping_list/widgets/new_list_button.dart';
 import 'package:shopping_list/tabs/home_tab.dart';
@@ -36,12 +37,7 @@ class Home extends StatelessWidget {
             title: Text("Buscar Lista"),
             centerTitle: true,
           ),
-          body: Container(
-            color: Colors.indigoAccent,
-            padding: EdgeInsets.all(4.0),
-            alignment: Alignment.center,
-            child: Text('TESTE 3'),
-          ),
+          body: Teste(),
           drawer: CustomDrawer(_pageController),
         ),
       ],
