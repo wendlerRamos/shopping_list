@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/screens/home.dart';
 
 void main() => runApp(Main());
 
@@ -14,20 +15,10 @@ class _MainState extends State<Main> {
       MaterialApp(
         title: 'Shopping List',
         theme: ThemeData(
-            primarySwatch: Colors.blue,
-            primaryColor:  Colors.orange[900],
+            primaryColor:  Colors.black,
         ),
         debugShowCheckedModeBanner: true,
-        home:  Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.orange[900],
-            title: Text('Shopping List'),
-          ),
-          body:  Container(
-              alignment: Alignment.center,
-              child: Text( 'This is the main', style: TextStyle(color: Colors.blue[900]),),
-          ),
-      )
+        home:  HomeScreen(),
     );
   }
 }
