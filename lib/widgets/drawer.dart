@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/widgets/alert_find.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   @override
@@ -39,26 +40,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                 color: Color.fromARGB(255, 236, 78, 32),
               ),
             ),
-            ListTile(
-              title: Row(
-                
-                children: <Widget>[
-                  Icon(Icons.home, color: Color.fromARGB(255, 0, 38, 66),),
-                  SizedBox(width: 10.0,),
-                  Text('Home', style: TextStyle(color: Color.fromARGB(255, 0, 38, 66)),),
-                ],
-              ),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            Divider(
-              color: Color.fromARGB(255, 236, 78, 32),
-              endIndent: 5.0,
-              thickness: 1.0,
-              height: 2.0,
-            ),
+
             ListTile(
               title: Row(
                 
@@ -69,8 +51,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.pop(context);
               },
             ),
             Divider(
@@ -79,7 +60,7 @@ class NavigationDrawerWidget extends StatelessWidget {
               thickness: 1.0,
               height: 2.0,
             ),
-                      ListTile(
+            ListTile(
               title: Row(
                 
                 children: <Widget>[
@@ -89,8 +70,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                //Navigator.pop(context);
+                alertSearchList(context);
               },
             ),
             Divider(

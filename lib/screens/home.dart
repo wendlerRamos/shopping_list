@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/widgets/alert_new.dart';
 import 'package:shopping_list/widgets/drawer.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -9,17 +11,30 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    var _scaffoldState = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldState,
         appBar: AppBar(
           backgroundColor: Colors.black,
           title: Text('Home'),
         ),
         drawer: NavigationDrawerWidget(),
-        body:  Container(
-            color: Color.fromARGB(255, 234, 224, 213),
-            alignment: Alignment.center,
-            child: Text( 'This is the home screen', style: TextStyle(color: Colors.blue[900]),),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color.fromARGB(255, 236, 78, 32),
+          child: Icon(Icons.add , size: 50.0,),
+          onPressed: () {
+            alertNewList(context);
+          },
         ),
+        body:  SingleChildScrollView(
+          padding: EdgeInsets.only(top: 10.0, bottom: 2.0, left: 5.0, right: 5.0),
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: <Widget>[
+              
+            ],
+          ),
+        )
     );
   }
 }
