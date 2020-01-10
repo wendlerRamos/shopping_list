@@ -4,16 +4,10 @@
 
 #import "GeneratedPluginRegistrant.h"
 
-#if __has_include(<cloud_firestore/CloudFirestorePlugin.h>)
-#import <cloud_firestore/CloudFirestorePlugin.h>
+#if __has_include(<cloud_firestore/FLTCloudFirestorePlugin.h>)
+#import <cloud_firestore/FLTCloudFirestorePlugin.h>
 #else
 @import cloud_firestore;
-#endif
-
-#if __has_include(<firebase_auth/FirebaseAuthPlugin.h>)
-#import <firebase_auth/FirebaseAuthPlugin.h>
-#else
-@import firebase_auth;
 #endif
 
 #if __has_include(<firebase_core/FLTFirebaseCorePlugin.h>)
@@ -22,19 +16,11 @@
 @import firebase_core;
 #endif
 
-#if __has_include(<url_launcher/FLTURLLauncherPlugin.h>)
-#import <url_launcher/FLTURLLauncherPlugin.h>
-#else
-@import url_launcher;
-#endif
-
 @implementation GeneratedPluginRegistrant
 
 + (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
   [FLTCloudFirestorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTCloudFirestorePlugin"]];
-  [FLTFirebaseAuthPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseAuthPlugin"]];
   [FLTFirebaseCorePlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTFirebaseCorePlugin"]];
-  [FLTURLLauncherPlugin registerWithRegistrar:[registry registrarForPlugin:@"FLTURLLauncherPlugin"]];
 }
 
 @end
