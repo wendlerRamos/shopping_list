@@ -1,4 +1,4 @@
-package com.example.shopping_list
+package br.com.wendler.shopping_list
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
