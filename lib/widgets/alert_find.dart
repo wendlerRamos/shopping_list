@@ -10,11 +10,7 @@ alertSearchList(BuildContext context) {
       Navigator.pop(context);
     },
   );
-  Widget continuaButton = FlatButton(
-    color: Color.fromARGB(255, 0, 38, 66),
-    child: Text("Buscar"),
-    onPressed:  null
-  );
+
   //configura o AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("BUSCAR LISTA", style: TextStyle(color: Color.fromARGB(255, 0, 38, 66)),),

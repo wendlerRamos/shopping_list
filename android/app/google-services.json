@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:456539702084:android:e13518da44a31e94a60d11",
+        "mobilesdk_app_id": "1:456539702084:android:6072d8c92af28fd0a60d11",
         "android_client_info": {
           "package_name": "br.com.wendler.shopping_list"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "456539702084-11e77dhjvrq22j4ui08qv4eo5cme6dcd.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "br.com.wendler.shopping_list",
-            "certificate_hash": "e0adaa0a905eecad7f4a21903770cacf3501a55d"
-          }
-        },
         {
           "client_id": "456539702084-ka472vdqg6uri96muqlqnlnq57k01rok.apps.googleusercontent.com",
           "client_type": 3
