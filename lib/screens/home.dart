@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/alert_new.dart';
 import 'package:shopping_list/widgets/drawer.dart';
+import 'package:shopping_list/widgets/form_new_item.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,16 +27,24 @@ class _HomeScreenState extends State<HomeScreen> {
             size: 50.0,
           ),
           onPressed: () {
-            testFirebase();
+            //testFirebase();
             alertNewList(context);
           },
         ),
         body: SingleChildScrollView(
           padding:
-              EdgeInsets.only(top: 10.0, bottom: 2.0, left: 5.0, right: 5.0),
+              EdgeInsets.only(top: 5.0, bottom: 2.0, left: 5.0, right: 5.0),
           scrollDirection: Axis.vertical,
           child: Column(
-            children: <Widget>[],
+            children: <Widget>[
+              Card(
+                borderOnForeground: true,
+                child: Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: FormRegister(),
+                )
+              ),
+            ],
           ),
         ));
   }
