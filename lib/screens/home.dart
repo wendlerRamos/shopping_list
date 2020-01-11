@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/alert_new.dart';
 import 'package:shopping_list/widgets/drawer.dart';
 import 'package:shopping_list/widgets/form_new_item.dart';
+import 'package:shopping_list/widgets/items_list.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -31,22 +32,30 @@ class _HomeScreenState extends State<HomeScreen> {
             alertNewList(context);
           },
         ),
-        body: SingleChildScrollView(
+        body: Padding(
           padding:
               EdgeInsets.only(top: 5.0, bottom: 2.0, left: 5.0, right: 5.0),
-          scrollDirection: Axis.vertical,
           child: Column(
+            verticalDirection: VerticalDirection.down,
             children: <Widget>[
               Card(
-                borderOnForeground: true,
-                child: Padding(
-                  padding: EdgeInsets.all(4.0),
-                  child: FormRegister(),
-                )
+                  borderOnForeground: true,
+                  child: Padding(
+                    padding: EdgeInsets.all(4.0),
+                    child: FormRegister(),
+                  )
               ),
+              RaisedButton(
+                child: Icon(Icons.refresh),
+                onPressed: (){ setState(() {
+                  
+                });},
+              ),
+              ItemsList()
             ],
           ),
-        ));
+        )
+    );
   }
 
   void testFirebase() {

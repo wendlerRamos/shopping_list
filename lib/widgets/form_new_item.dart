@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/models/item_model.dart';
+import 'package:shopping_list/models/list_model.dart';
 
 class FormRegister extends StatefulWidget {
   @override
@@ -111,7 +111,7 @@ class _FormRegisterState extends State<FormRegister> {
                       itemList.quantity = double.parse(_qtController.text);
                       if (_maxValueController.text != "") {
                         itemList.maxValue =
-                            double.parse(_maxValueController.text);
+                            double.tryParse(_maxValueController.text);
                       }
                       itemList.priority = _currentState.toString();
                       ListModel('teste').addProductToList(itemList);

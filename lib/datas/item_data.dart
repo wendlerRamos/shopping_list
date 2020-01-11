@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:scoped_model/scoped_model.dart';
 
-class ItemList {
+class ItemList extends Model{
   String productId;
   String name;
   double quantity;
@@ -32,5 +33,15 @@ class ItemList {
       "maxValue" : maxValue,
       "status" : status,
     };
+  }
+
+  void updateStaus(listCode){
+    if(this.status){
+      this.status = false;
+    }else{
+      this.status = true;
+    }
+    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(this.productId).updateData(this.toMap());
+    notifyListeners();
   }
 }

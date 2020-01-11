@@ -30,7 +30,9 @@ class ListModel extends Model{
     notifyListeners();
   }
 
-
+  static void removeItem2(ItemList itemList, listCode){
+    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(itemList.productId).delete();
+  }
 
   void setProductStatus(ItemList itemList){
     if(itemList.status){
