@@ -63,6 +63,9 @@ class _FormRegisterState extends State<FormRegister> {
                     labelText: "Qt",
                   ),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  validator: (value) {
+                    if (value.isEmpty) return "Campo obrigatório"; else return null;
+                  },
                   //initialValue: "1",
                 ),
               )
@@ -108,10 +111,10 @@ class _FormRegisterState extends State<FormRegister> {
                     if (_formKey.currentState.validate()) {
                       ItemList itemList = ItemList();
                       itemList.name = _itemController.text;
-                      itemList.quantity = double.parse(_qtController.text);
+                      itemList.quantity = double.parse(_qtController.text.replaceAll(new RegExp(r','), '.'));
                       if (_maxValueController.text != "") {
                         itemList.maxValue =
-                            double.tryParse(_maxValueController.text);
+                            double.tryParse(_maxValueController.text.replaceAll(new RegExp(r','), '.'));
                       }
                       itemList.priority = _currentState.toString();
                       ListModel('teste').addProductToList(itemList);
