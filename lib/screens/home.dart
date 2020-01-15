@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/alert_new.dart';
 import 'package:shopping_list/widgets/drawer.dart';
@@ -45,28 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: FormRegister(),
                   )
               ),
-              RaisedButton(
-                child: Icon(Icons.refresh),
-                onPressed: (){ setState(() {
-                  
-                });},
+              SizedBox(
+                height: 10.0,
               ),
               ItemsList()
             ],
           ),
         )
     );
-  }
-
-  void testFirebase() {
-    try {
-      Firestore.instance
-          .collection('books')
-          .document()
-          .setData({'title': 'title', 'author': 'author'});
-      print('SUCESSO !');
-    } catch (e) {
-      print('FALHA !');
-    }
   }
 }

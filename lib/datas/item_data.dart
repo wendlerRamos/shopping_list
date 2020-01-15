@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:scoped_model/scoped_model.dart';
+//import 'package:scoped_model/scoped_model.dart';
 
-class ItemList extends Model{
+class ItemList{
   String productId;
   String name;
   double quantity;
@@ -10,6 +10,15 @@ class ItemList extends Model{
   bool status = false;
 
   ItemList();
+/*
+  ItemList(DocumentSnapshot document){
+    productId = document.documentID;
+    name = document.data["name"];
+    quantity = document.data["quantity"];
+    priority = document.data["priority"];
+    maxValue = document.data["maxValue"];
+    status = document.data["status"];
+  }*/
 
   ItemList.fromDocument(DocumentSnapshot document){
       productId = document.documentID;
@@ -42,6 +51,5 @@ class ItemList extends Model{
       this.status = true;
     }
     Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(this.productId).updateData(this.toMap());
-    notifyListeners();
   }
 }

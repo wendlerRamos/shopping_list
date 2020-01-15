@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:shopping_list/models/list_model.dart';
-
+import 'package:shopping_list/datas/item_data.dart';
 import 'item_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ItemsList extends StatefulWidget {
   @override
@@ -11,55 +10,46 @@ class ItemsList extends StatefulWidget {
 
 class _ItemsListState extends State<ItemsList> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: ListView(
-        
-        shrinkWrap: true,
-        padding: EdgeInsets.only(top: 5.0, left: 4.0, right: 4.0),
-        scrollDirection: Axis.vertical,
-        children: <Widget>[
-          SizedBox(
-            height: 2.0,
-          ),
-          Card(
-            margin: EdgeInsets.all(4.0),
-            child: Padding(
-                padding: EdgeInsets.all(4.0),
-                child: ScopedModel<ListModel>(
-                  model: ListModel('teste'),
-                  child: ScopedModelDescendant<ListModel>(
-                    rebuildOnChange: true,
-                    builder: (context, child, model) {
-                      if (model.isLoading) {
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }else if (model.products == null || model.products.length == 0) {
-                        return Center(
-                          child: Text(
-                            "Nenhum produto na lista !",
-                            style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                                color: Theme.of(context).primaryColor),
-                            textAlign: TextAlign.center,
-                          ),
-                        );
-                      } else {
-                        //print("Itens: ${model.products.length}");
-                        return Column(
-                          children: model.products.map((product) {
-                            return ItemWidget(product);
-                          }).toList(),
-                        );
-                      }
-                    },
-                  ),
-                )),
-          ),
-        ],
-      ),
-    );
+        child: Card(
+      margin: EdgeInsets.all(4.0),
+      child: Padding(
+          padding: EdgeInsets.all(4.0),
+          child: StreamBuilder(
+            stream: Firestore.instance
+                .collection('shoppingLists')
+                .document('teste')
+                .collection('products')
+                .snapshots(),
+            builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (!snapshot.hasData) {
+                return Text("Loading..");
+              }
+              else if (snapshot.hasError){
+                  return Text("Ops... Something went wrong !");
+              }else if(snapshot.data.documents.length == 0){
+                  return Text("This list it's empty !");
+
+              }
+              return ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                children: snapshot.data.documents.map((DocumentSnapshot document){
+                  ItemList _itemList = ItemList.fromDocument(document);
+                  //print(_itemList);
+                  return ItemWidget(
+                    itemList: _itemList,
+                  );
+                }).toList(),
+              );
+            },
+          )),
+    ));
   }
 }
