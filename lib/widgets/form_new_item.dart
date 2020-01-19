@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
+import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/models/list_model.dart';
 
 class FormRegister extends StatefulWidget {
@@ -9,6 +10,7 @@ class FormRegister extends StatefulWidget {
 
 class _FormRegisterState extends State<FormRegister> {
   String _currentState;
+  String _listCode = ListCode().getCurrentList();
   List _option = ["NECESSARIO", "DESEJAVEL"];
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
     List<DropdownMenuItem<String>> items = new List();
@@ -117,7 +119,7 @@ class _FormRegisterState extends State<FormRegister> {
                             double.tryParse(_maxValueController.text.replaceAll(new RegExp(r','), '.'));
                       }
                       itemList.priority = _currentState.toString();
-                      ListModel('teste').addProductToList(itemList);
+                      ListModel(_listCode).addProductToList(itemList);
                       _qtController.text = "1";
                       _itemController.text = "";
                       _maxValueController.text = "";

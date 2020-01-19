@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/screens/home.dart';
 
 void main() => runApp(Main());
@@ -9,9 +10,10 @@ class Main extends StatefulWidget {
 }
 
 class _MainState extends State<Main> {
-
+  ListCode _listCode;
   @override
   Widget build(BuildContext context) {
+    this._listCode = ListCode();
     return
       MaterialApp(
         title: 'Shopping List',

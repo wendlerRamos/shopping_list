@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
+import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/models/list_model.dart';
 
 class ItemWidget extends StatefulWidget {
@@ -11,6 +12,7 @@ class ItemWidget extends StatefulWidget {
 
 class _ItemWidgetState extends State<ItemWidget> {
   @override
+  String _listCode = ListCode().getCurrentList();
   Widget build(BuildContext context) {
     bool status = widget.itemList.status;
     String _subtitleText = "Qt: " + widget.itemList.quantity.toString();
@@ -32,7 +34,7 @@ class _ItemWidgetState extends State<ItemWidget> {
           checkColor: Colors.white,
           onChanged: (c) {
             (status) ? status= false : status = true;
-            widget.itemList.updateStaus('teste');
+            widget.itemList.updateStaus(_listCode);
           },
           value: status,
           title:  Text(
@@ -48,7 +50,7 @@ class _ItemWidgetState extends State<ItemWidget> {
           ),
         ),
         onDismissed: (direction){
-          ListModel.removeItem2(widget.itemList, 'teste');
+          ListModel.removeItem2(widget.itemList, _listCode);
       },
     );
   }

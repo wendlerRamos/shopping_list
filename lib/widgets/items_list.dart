@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
+import 'package:shopping_list/datas/list_code_store.dart';
 import 'item_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity/connectivity.dart';
@@ -39,7 +40,7 @@ class _ItemsListState extends State<ItemsList> {
   
   @override
   Widget build(BuildContext context) {
-
+    String _listCode = ListCode().getCurrentList();
     final cardContent =  Expanded(
         child: Card(
         margin: EdgeInsets.all(4.0),
@@ -48,19 +49,24 @@ class _ItemsListState extends State<ItemsList> {
             child: StreamBuilder(
               stream: Firestore.instance
                   .collection('shoppingLists')
-                  .document('teste')
+                  .document(_listCode)
                   .collection('products')
                   .snapshots(),
               
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-                /*
-                Future.delayed(const Duration(milliseconds: 500), () {
-                  if(snapshot.connectionState == ConnectionState.none ){
-                    showConnectionState(false);
-                  }else{
-                    showConnectionState(true);
-                  }
-                });*/
+                if(_listCode == null){
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(Icons.announcement, size: 100.0, color: Colors.red,),
+                          Text("Nenhuma Lista Selecionada", textAlign: TextAlign.center, style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0 ),),
+                          Text("Busque uma lista existente ou crie uma nova", textAlign: TextAlign.center, style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 15.0, fontStyle: FontStyle.italic ),),
+                        ],
+                      )
+                    );
+                }
+
                 if (!snapshot.hasData) {
                   return Center(
                       child: CircularProgressIndicator(),
@@ -88,6 +94,7 @@ class _ItemsListState extends State<ItemsList> {
                     );
                 }
                 return ListView(
+
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: snapshot.data.documents.map((DocumentSnapshot document){
