@@ -32,6 +32,11 @@ class _FormRegisterState extends State<FormRegister> {
       _dropDownMenuItems = getDropDownMenuItems();
       _currentState = _dropDownMenuItems[0].value;
     }
+
+    if(_listCode == null){
+      return Row();
+    }
+    
     return Form(
       
       key: _formKey,

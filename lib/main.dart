@@ -14,6 +14,8 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     this._listCode = ListCode();
+    print(_listCode);
+//    this._listCode.setCurrentList('teste');
     return
       MaterialApp(
         title: 'Shopping List',

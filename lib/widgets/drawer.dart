@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/alert_find.dart';
+class NavigationDrawerWidget extends StatefulWidget {
+  @override
+  _NavigationDrawerWidgetState createState() => _NavigationDrawerWidgetState();
+}
 
-class NavigationDrawerWidget extends StatelessWidget {
+class _NavigationDrawerWidgetState extends State<NavigationDrawerWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: 250,
       child: Drawer(
         elevation: 10.0,
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
-          
           children: <Widget>[
             DrawerHeader(
               
@@ -70,8 +69,13 @@ class NavigationDrawerWidget extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                //Navigator.pop(context);
-                alertSearchList(context);
+                  Navigator.of(context).pop();
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertSeachList();
+                    },
+                  );
               },
             ),
             Divider(
@@ -85,4 +89,6 @@ class NavigationDrawerWidget extends StatelessWidget {
       ),
     );
   }
+
+  
 }

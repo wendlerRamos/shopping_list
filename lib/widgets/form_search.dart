@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/models/list_model.dart';
 
 class FormSearchList extends StatefulWidget {
   @override
@@ -8,8 +10,8 @@ class FormSearchList extends StatefulWidget {
 class _FormSearchListState extends State<FormSearchList> {
   @override
   Widget build(BuildContext context) {
-    
     final _formKey = GlobalKey<FormState>();
+    final _searchListCode = TextEditingController();
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Form(
@@ -18,6 +20,7 @@ class _FormSearchListState extends State<FormSearchList> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             TextFormField(
+              controller: _searchListCode,
               autofocus: true,
               decoration: const InputDecoration(
                 icon: Icon(Icons.search),
@@ -34,23 +37,34 @@ class _FormSearchListState extends State<FormSearchList> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: RaisedButton(
-                
                 color: Color.fromARGB(255, 0, 38, 66),
                 onPressed: () {
-                  // Validate returns true if the form is valid, or false
-                  // otherwise.
                   if (_formKey.currentState.validate()) {
-                    // If the form is valid, display a Snackbar.
-                    //Scaffold.of(context).showSnackBar(SnackBar(content: Text('Buscando a lista ... ')));
-                    
+                    Future<bool> result =
+                        ListModel.checkIfListCodeExists(_searchListCode.text);
+                    result.then((value) async {
+                      if (value) {
+                        ListCode().setCurrentList(_searchListCode.text);
+                      } else {
+                        Navigator.pop(context);
+                      }
+                    });
                   }
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Icon(Icons.search, color: Colors.orange[50],),
-                    Padding(padding: EdgeInsets.only(left: 10.0),),
-                    Text('Buscar', style: TextStyle(color: Colors.orange[50]),),
+                    Icon(
+                      Icons.search,
+                      color: Colors.orange[50],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                    ),
+                    Text(
+                      'Buscar',
+                      style: TextStyle(color: Colors.orange[50]),
+                    ),
                   ],
                 ),
               ),

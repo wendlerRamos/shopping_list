@@ -13,10 +13,6 @@ class ListCode{
   ListCode._internal(){
     getListsFromStorage();
   }
-  
-  /*ListCode(){
-    getListsFromStorage();
-  }*/
 
   void getListsFromStorage() async {
     final _storageInstance = await SharedPreferences.getInstance();
@@ -36,7 +32,7 @@ class ListCode{
     }
   }
 
-  Future<void> setCurrentList(String newCode) async {
+  void setCurrentList(String newCode) async {
     final _storageInstance = await SharedPreferences.getInstance();
     this._currentCode = newCode;
     _historyOfCodes.removeWhere((item) => item == newCode);
@@ -44,4 +40,5 @@ class ListCode{
     _storageInstance.setString('current_code', this._currentCode);
     _storageInstance.setStringList('list_codes', this._historyOfCodes);
   }
+
 }

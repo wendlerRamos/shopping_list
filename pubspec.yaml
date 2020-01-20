@@ -28,6 +28,8 @@ dependencies:
   scoped_model: ^1.0.1
   connectivity: ^0.4.6+2
   shared_preferences: ^0.5.6
+  random_string: ^2.0.1
+
   
 dev_dependencies:
   flutter_test:

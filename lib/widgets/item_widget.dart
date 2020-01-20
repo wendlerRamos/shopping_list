@@ -11,8 +11,9 @@ class ItemWidget extends StatefulWidget {
 }
 
 class _ItemWidgetState extends State<ItemWidget> {
-  @override
   String _listCode = ListCode().getCurrentList();
+  
+  @override
   Widget build(BuildContext context) {
     bool status = widget.itemList.status;
     String _subtitleText = "Qt: " + widget.itemList.quantity.toString();
