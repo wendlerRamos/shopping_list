@@ -45,9 +45,8 @@ class _FormSearchListState extends State<FormSearchList> {
                     result.then((value) async {
                       if (value) {
                         ListCode().setCurrentList(_searchListCode.text);
-                      } else {
-                        Navigator.pop(context);
-                      }
+                      } 
+                      Navigator.pop(context);
                     });
                   }
                 },

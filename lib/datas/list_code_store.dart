@@ -12,6 +12,7 @@ class ListCode{
 
   ListCode._internal(){
     getListsFromStorage();
+    Future.delayed(Duration(seconds: 1));
   }
 
   void getListsFromStorage() async {

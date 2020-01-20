@@ -84,14 +84,40 @@ class ListModel extends Model{
     }
   }
 
+  static Future<int> checkIfListCodeNotExists(String searchCode) async {
+    int exist;
+    try{
+        await Firestore.instance.collection("shoppingLists").document(searchCode).get().then((onValue){
+          if(onValue.exists){  
+            exist = 1; // Exists
+          }else{
+            exist = 0; //Do not exists
+          }
+        });
+        return exist;
+    }catch(e){
+      return 503; //Database connection failure
+    }
+  }
+
 
   static void createList() async{
     String newCodeList = '';
     bool isValidCode = false;
+    int _status;
     do{
       newCodeList = randomAlphaNumeric(5);
-      bool result = await checkIfListCodeExists(newCodeList);
-      isValidCode = result;
+      _status = await checkIfListCodeNotExists(newCodeList);
+      if(_status == 1){
+        print('1');
+        isValidCode = true;
+      }else if(_status == 0){
+        print('0');
+        isValidCode = false;
+      }else{
+        print('Erro de conexão');
+        return ;
+      }
     }while(isValidCode);
 
     await Firestore.instance.collection('shoppingLists').document(newCodeList).setData({
