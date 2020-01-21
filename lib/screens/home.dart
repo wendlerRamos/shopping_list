@@ -121,14 +121,12 @@ class _HomeScreenState extends State<HomeScreen> {
     );
     //configura o AlertDialog
     AlertDialog alert = AlertDialog(
-      
       title: Text("NOVA LISTA", style: TextStyle(color: Color.fromARGB(255, 0, 38, 66)),),
       backgroundColor: Colors.orange[50],
       content: Text("Deseja criar uma nova lista de compras ?"),
       actions: [
         cancelaButton,
         continuaButton,
-        
       ],
     );
     //exibe o diálogo

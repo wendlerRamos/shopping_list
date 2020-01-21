@@ -15,7 +15,6 @@ class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
     this._listCode = ListCode();
-    print(_listCode);
     return MaterialApp(
       title: 'Shopping List',
       theme: ThemeData(
@@ -41,17 +40,16 @@ Widget _introScreen() {
         loaderColor: Colors.transparent,
       ),
       Center(
-        child: Container(
-          width: 150.0,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("icons/logo-app-sem-fundo.png"),
-              fit: BoxFit.none,
+        child:Container(
+            width: 150.0,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("icons/logo-app-sem-fundo.png"),
+                fit: BoxFit.none,
+              ),
             ),
           ),
-        ),
       ),
-      Text("SL - Shopping List", style: TextStyle(color: Color.fromARGB(255, 236, 78, 32), fontSize: 20.0), ),
     ],
   );
 }

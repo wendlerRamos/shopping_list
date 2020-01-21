@@ -94,7 +94,7 @@ class _ItemsListState extends State<ItemsList> {
                     );
                 }
                 return ListView(
-
+                  
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: snapshot.data.documents.map((DocumentSnapshot document){
