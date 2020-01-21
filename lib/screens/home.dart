@@ -14,7 +14,6 @@ class _HomeScreenState extends State<HomeScreen> {
   String _listCode;
   @override
   Widget build(BuildContext context) {
-    print('build list');
     _listCode = ListCode().getCurrentList();
     Widget _listCodeCard;
     if(_listCode != null){
@@ -141,3 +140,5 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+
