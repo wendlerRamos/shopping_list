@@ -36,7 +36,7 @@ class _FormSearchListState extends State<FormSearchList> {
           children: <Widget>[
             TextFormField(
               controller: _searchListCode,
-              autofocus: true,
+              autofocus: false,
               decoration: const InputDecoration(
                 icon: Icon(Icons.search),
                 hintText: 'Informe o código da lista',
