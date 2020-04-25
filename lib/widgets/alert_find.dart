@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/form_search.dart';
 
+@deprecated
 class AlertSeachList extends StatefulWidget {
   @override
   _AlertSeachListState createState() => _AlertSeachListState();

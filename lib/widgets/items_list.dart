@@ -19,7 +19,7 @@ class _ItemsListState extends State<ItemsList> {
   @override
   void initState() {
     super.initState();
-        connectivitySubscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult connectivityResult) {
+      connectivitySubscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult connectivityResult) {
       if (connectivityResult == ConnectivityResult.none) {
         showConnectionState(false);
       }
@@ -87,7 +87,7 @@ class _ItemsListState extends State<ItemsList> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.not_interested, size: 100.0, color: Color.fromARGB(255, 0, 38, 66),),
+                          Icon(Icons.remove_shopping_cart, size: 100.0, color: Color.fromARGB(255, 0, 38, 66),),
                           Text("A lista está vazia!", style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0 ),),
                         ],
                       )

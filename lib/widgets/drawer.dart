@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/alert_find.dart';
+
+@deprecated
 class NavigationDrawerWidget extends StatefulWidget {
   @override
   _NavigationDrawerWidgetState createState() => _NavigationDrawerWidgetState();

@@ -34,7 +34,10 @@ Widget _introScreen() {
         gradientBackground: LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
-          colors: [Color.fromARGB(255, 0, 38, 66), Colors.black],
+          colors: [
+            Color.fromARGB(255, 0, 38, 66), 
+            Colors.black
+          ],
         ),
         navigateAfterSeconds: HomeScreen(),
         loaderColor: Colors.transparent,
