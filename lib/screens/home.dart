@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
-import 'package:shopping_list/models/list_model.dart';
-import 'package:shopping_list/widgets/drawer.dart';
-import 'package:shopping_list/widgets/form_new_item.dart';
-import 'package:shopping_list/widgets/items_list.dart';
+import 'search_list_screen.dart';
+import 'shopping_list_screen.dart';
+import 'new_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -11,92 +9,97 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String _listCode;
-  @override
-  Widget build(BuildContext context) {
-    _listCode = ListCode().getCurrentList();
-    Widget _listCodeCard;
-    if(_listCode != null){
-      _listCodeCard = Card(
-        borderOnForeground: true,
-        child: Padding(
-          padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
-          child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('Código da Lista: \t \t', style: TextStyle(fontSize: 20.0),),
-            SelectableText(_listCode,  style: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
-          ],          
-        ),
-        )
-      );
-    }else{
-      _listCodeCard = Row();
-    }
-    var _scaffoldState = GlobalKey<ScaffoldState>();
-    return Scaffold(
-        key: _scaffoldState,
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Row(
-            children: <Widget>[
-              Text('Home'),
-              Expanded(
-                flex: 1,
-                child: Container(
-                  alignment: Alignment.topRight,
-                  child: FlatButton(
-                  onPressed: (){
-                    setState(() {
-                      
-                    });
-                  },
-                  child: Icon(
-                    Icons.refresh,color: Colors.orange[50],
-                  ),
-              ),
-                ),
-              )
-            ],
-          ),
-        ),
-        drawer: NavigationDrawerWidget(),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: Color.fromARGB(255, 236, 78, 32),
-          child: Icon(
-            Icons.add,
-            size: 50.0,
-          ),
-          onPressed: () {
-            alertNewList(context);
-          },
-        ),
-        body: Padding(
-          padding:
-            EdgeInsets.only(top: 5.0, bottom: 2.0, left: 5.0, right: 5.0),
-            child: Column(
-            verticalDirection: VerticalDirection.down,
-            children: <Widget>[
-              Card(
-                  borderOnForeground: true,
-                  child: Padding(
-                    padding: EdgeInsets.all(4.0),
-                    child: FormRegister(),
-                  )
-              ),
-              _listCodeCard,
-              SizedBox(
-                height: 1.0,
-              ),
-              ItemsList()
-            ],
-          ),
-        )
+  int bottomSelectedIndex = 1;
+
+  List<BottomNavigationBarItem> buildBottomNavBarItems() {
+    return [
+      BottomNavigationBarItem(
+        icon: Icon(Icons.add_circle),
+        title: Text('Nova Lista'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.home),
+        title: Text('Lista de Compras'),
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.search),
+        title: Text('Buscar Lista'),
+      ),
+    ];
+  }
+
+  PageController pageController = PageController(
+    initialPage: 1,
+    keepPage: true,
+  );
+
+  //Used to integrate page view and bottom navigation
+  void pageChanged(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.animateToPage(index,
+          duration: Duration(milliseconds: 300), curve: Curves.ease);
+      
+    });
+  }
+
+  //Used to integrate bottom navigate click with page view
+  void bottomTapped(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.animateToPage(index,
+          duration: Duration(milliseconds: 300), curve: Curves.ease);
+    });
+  }
+
+  Widget buildPageView() {
+    return PageView(
+      pageSnapping: true,
+      controller: pageController,
+      onPageChanged: (index) {
+        pageChanged(index);
+      },
+      children: <Widget>[
+        NewListScreen(),
+        ShoppingListScreen(),
+        SearchListScreen(),
+      ],
     );
   }
 
-
-
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: <Widget>[
+            Text('Shopping List'),
+            Expanded(
+              flex: 1,
+              child: Container(
+                alignment: Alignment.topRight,
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: Colors.orange[50],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+      body: buildPageView(),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: bottomSelectedIndex,
+        
+        onTap: (index) {
+          bottomTapped(index);
+        },
+        items: buildBottomNavBarItems(),
+      ),
+    );
+  }
+}
+/*
   alertNewList(BuildContext context) {
     Widget cancelaButton = FlatButton(
       color: Colors.red,
@@ -137,6 +140,4 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
-}
-
-
+  */
