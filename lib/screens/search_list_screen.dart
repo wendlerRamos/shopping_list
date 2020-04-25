@@ -37,7 +37,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
           ),
         )),
         Card(
-          child: Text('Another thing here !'),
+          child: Text(''),
         ),
       ],
     ));

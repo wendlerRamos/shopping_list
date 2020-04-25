@@ -5,126 +5,159 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
 
-class ListModel extends Model{
+class ListModel extends Model {
   List<ItemList> products = [];
   bool isLoading = false;
   String listCode = "lista";
-
 
   ListModel(this.listCode) {
     _loadItens();
   }
 
+  static ListModel of(BuildContext context) =>
+      ScopedModel.of<ListModel>(context);
 
-  static  ListModel of(BuildContext context) => ScopedModel.of<ListModel>(context);
-
-  void addProductToList(ItemList item){
+  void addProductToList(ItemList item) {
     products.add(item);
-    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').add(item.toMap()).then((doc){
+    Firestore.instance
+        .collection("shoppingLists")
+        .document(listCode)
+        .collection('products')
+        .add(item.toMap())
+        .then((doc) {
       //item.userId = doc.documentID;
     });
     notifyListeners();
   }
 
-  void removeItem(ItemList itemList){
-    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(itemList.productId).delete();
+  void removeItem(ItemList itemList) {
+    Firestore.instance
+        .collection("shoppingLists")
+        .document(listCode)
+        .collection('products')
+        .document(itemList.productId)
+        .delete();
     products.remove(itemList);
     notifyListeners();
   }
 
-  static void removeItem2(ItemList itemList, listCode){
-    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(itemList.productId).delete();
+  static void removeItem2(ItemList itemList, listCode) {
+    Firestore.instance
+        .collection("shoppingLists")
+        .document(listCode)
+        .collection('products')
+        .document(itemList.productId)
+        .delete();
   }
 
-  void setProductStatus(ItemList itemList){
-    if(itemList.status){
+  void setProductStatus(ItemList itemList) {
+    if (itemList.status) {
       itemList.status = false;
-    }else{
+    } else {
       itemList.status = true;
     }
-    Firestore.instance.collection("shoppingLists").document(listCode).collection('products').document(itemList.productId).updateData(itemList.toMap());
+    Firestore.instance
+        .collection("shoppingLists")
+        .document(listCode)
+        .collection('products')
+        .document(itemList.productId)
+        .updateData(itemList.toMap());
     notifyListeners();
   }
 
   void _loadItens() async {
     isLoading = true;
-    QuerySnapshot query = await Firestore.instance.collection("shoppingLists").document(listCode).collection('products')
+    QuerySnapshot query = await Firestore.instance
+        .collection("shoppingLists")
+        .document(listCode)
+        .collection('products')
         .getDocuments();
 
-    products = query.documents.map((doc) => ItemList.fromDocument(doc)).toList();
+    products =
+        query.documents.map((doc) => ItemList.fromDocument(doc)).toList();
     isLoading = false;
     notifyListeners();
   }
 
-
-
-  void updateList(){
+  void updateList() {
     notifyListeners();
   }
 
-
-  void removeList(){
+  void removeList() {
     Firestore.instance.collection("shoppingLists").document(listCode).delete();
     notifyListeners();
   }
 
   static Future<bool> checkIfListCodeExists(String searchCode) async {
     bool exist;
-    try{
-        await Firestore.instance.collection("shoppingLists").document(searchCode).get().then((onValue){
-          if(onValue.exists){  
-            exist = true;
-          }else{
-            exist = false;
-          }
-        });
-        return exist;
-    }catch(e){
+    try {
+      await Firestore.instance
+          .collection("shoppingLists")
+          .document(searchCode)
+          .get()
+          .then((onValue) {
+        if (onValue.exists) {
+          exist = true;
+        } else {
+          exist = false;
+        }
+      });
+      return exist;
+    } catch (e) {
       return false;
     }
   }
 
   static Future<int> checkIfListCodeNotExists(String searchCode) async {
     int exist;
-    try{
-        await Firestore.instance.collection("shoppingLists").document(searchCode).get().then((onValue){
-          if(onValue.exists){  
-            exist = 1; // Exists
-          }else{
-            exist = 0; //Do not exists
-          }
-        });
-        return exist;
-    }catch(e){
+    try {
+      await Firestore.instance
+          .collection("shoppingLists")
+          .document(searchCode)
+          .get()
+          .then((onValue) {
+        if (onValue.exists) {
+          exist = 1; // Exists
+        } else {
+          exist = 0; //Do not exists
+        }
+      });
+      return exist;
+    } catch (e) {
       return 503; //Database connection failure
     }
   }
 
-
-  static void createList() async{
+  static Future<String> createList() async {
     String newCodeList = '';
     bool isValidCode = false;
     int _status;
-    do{
+    int count = 0;
+    do {
+      count = count + 1;
       newCodeList = randomAlphaNumeric(5);
       _status = await checkIfListCodeNotExists(newCodeList);
-      if(_status == 1){
-        print('1');
+      if (_status == 1) {
         isValidCode = true;
-      }else if(_status == 0){
-        print('0');
+      } else if (_status == 0) {
         isValidCode = false;
-      }else{
+      } else {
         print('Erro de conexão');
-        return ;
+        return null;
       }
-    }while(isValidCode);
-
-    await Firestore.instance.collection('shoppingLists').document(newCodeList).setData({
-      'created_at': new DateTime.now(),
-    }).then((_){
-      ListCode().setCurrentList(newCodeList);
-    });
-    return;
+    } while (isValidCode && count < 5);
+    if (count < 5) {
+      await Firestore.instance
+          .collection('shoppingLists')
+          .document(newCodeList)
+          .setData({
+        'created_at': new DateTime.now(),
+      }).then((_) {
+        ListCode().setCurrentList(newCodeList);
+      });
+    } else {
+      return null;
+    }
+    return newCodeList;
   }
 }
