@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/models/list_model.dart';
 
 class NewListScreen extends StatefulWidget {

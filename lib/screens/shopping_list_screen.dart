@@ -36,7 +36,12 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
       _formCard = Card(
           borderOnForeground: true,
           child: Padding(
-            padding: EdgeInsets.all(4.0),
+            padding: EdgeInsets.only(
+              top: 4.0,
+              bottom: 4.0,
+              left: 8.0,
+              right: 8.0,
+            ),
             child: FormRegister(),
           )
       );

@@ -94,7 +94,6 @@ class _FormSearchListState extends State<FormSearchList> {
                 ),
               ),
             ),
-            _loadingProgress,
           ],
         ),
       ),
