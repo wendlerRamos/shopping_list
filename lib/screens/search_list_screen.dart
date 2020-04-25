@@ -32,7 +32,8 @@ class _SearchListScreenState extends State<SearchListScreen> {
                 ),
                 textAlign: TextAlign.center,
               ),
-              FormSearchList(),
+              Expanded(child: FormSearchList(), flex: 1,)
+              
             ],
           ),
         )),

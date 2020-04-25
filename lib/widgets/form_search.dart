@@ -8,10 +8,25 @@ class FormSearchList extends StatefulWidget {
 }
 
 class _FormSearchListState extends State<FormSearchList> {
+  bool _isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
     final _searchListCode = TextEditingController();
+    if (_isLoading) {
+      return Column(
+        children: <Widget>[
+          SizedBox(
+            height: 50.0,
+          ),
+          Center(
+            child: CircularProgressIndicator(),
+          )
+        ],
+      );
+    }
+
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Form(
@@ -40,17 +55,21 @@ class _FormSearchListState extends State<FormSearchList> {
                 color: Color.fromARGB(255, 0, 38, 66),
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
+                    setState(() {
+                      _isLoading = true;
+                    });
                     Future<bool> result =
                         ListModel.checkIfListCodeExists(_searchListCode.text);
                     result.then((value) async {
                       if (value) {
                         ListCode().setCurrentList(_searchListCode.text);
                         notificateSearchStatus(true);
-                      }else{
+                      } else {
                         notificateSearchStatus(false);
                       }
-                      // TO DO Fazer um modal legal
-                      //Navigator.pop(context);
+                      setState(() {
+                        _isLoading = false;
+                      });
                     });
                   }
                 },
@@ -68,10 +87,14 @@ class _FormSearchListState extends State<FormSearchList> {
                       'Buscar',
                       style: TextStyle(color: Colors.orange[50]),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                    ),
                   ],
                 ),
               ),
             ),
+            _loadingProgress,
           ],
         ),
       ),
@@ -81,13 +104,19 @@ class _FormSearchListState extends State<FormSearchList> {
   void notificateSearchStatus(bool isListFounded) {
     if (isListFounded) {
       final snackBar = SnackBar(
-        content: Text('Lista selecionada com sucesso !', textAlign: TextAlign.center,),
+        content: Text(
+          'Lista selecionada com sucesso !',
+          textAlign: TextAlign.center,
+        ),
         backgroundColor: Colors.green[900],
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
       final snackBar = SnackBar(
-        content: Text('Código de lista não encontrado !', textAlign: TextAlign.center,),
+        content: Text(
+          'Código de lista não encontrado !',
+          textAlign: TextAlign.center,
+        ),
         backgroundColor: Color.fromARGB(255, 236, 78, 32),
       );
       Scaffold.of(context).showSnackBar(snackBar);

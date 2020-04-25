@@ -8,6 +8,9 @@ class NewListScreen extends StatefulWidget {
 }
 
 class _NewListScreenState extends State<NewListScreen> {
+
+  bool _isLoading = false;
+
   @override
   Widget build(BuildContext context) {
     Widget _continuaButton = FlatButton(
@@ -31,6 +34,9 @@ class _NewListScreenState extends State<NewListScreen> {
         ],
       ),
       onPressed: () async {
+        setState(() {
+          _isLoading = true;
+        });
         String newCodeList = await ListModel.createList();
         if (newCodeList != null) {
           final snackBar = SnackBar(
@@ -51,8 +57,20 @@ class _NewListScreenState extends State<NewListScreen> {
           );
           Scaffold.of(context).showSnackBar(snackBar);
         }
+        setState(() {
+          _isLoading = false;
+        });
       },
     );
+
+    if(_isLoading){
+      return Center(
+        child: CircularProgressIndicator(
+
+        ),
+      );
+    }
+
     return Container(
       child: Card(
           child: Padding(
