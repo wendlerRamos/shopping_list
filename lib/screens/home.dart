@@ -93,6 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
             onTap: (index) {
               bottomTapped(index);
             },
+            selectedItemColor: Color.fromARGB(255, 236, 78, 32),
+            unselectedItemColor: Color.fromARGB(255, 0, 38, 66),
             items: buildBottomNavBarItems(),
           ),
         )
