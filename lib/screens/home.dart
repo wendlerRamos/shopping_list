@@ -39,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomSelectedIndex = index;
       pageController.animateToPage(index,
           duration: Duration(milliseconds: 300), curve: Curves.ease);
-      
     });
   }
 
@@ -70,33 +69,34 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: <Widget>[
-            Text('Shopping List'),
-            Expanded(
-              flex: 1,
-              child: Container(
-                alignment: Alignment.topRight,
-                child: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.orange[50],
+        appBar: AppBar(
+          title: Row(
+            children: <Widget>[
+              Text('Shopping List'),
+              Expanded(
+                flex: 1,
+                child: Container(
+                  alignment: Alignment.topRight,
+                  child: Icon(
+                    Icons.shopping_cart,
+                    color: Colors.orange[50],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
-      ),
-      body: buildPageView(),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: bottomSelectedIndex,
-        
-        onTap: (index) {
-          bottomTapped(index);
-        },
-        items: buildBottomNavBarItems(),
-      ),
-    );
+        body: buildPageView(),
+        bottomNavigationBar: Card(
+          child: BottomNavigationBar(
+            currentIndex: bottomSelectedIndex,
+            onTap: (index) {
+              bottomTapped(index);
+            },
+            items: buildBottomNavBarItems(),
+          ),
+        )
+      );
   }
 }
 /*

@@ -45,8 +45,12 @@ class _FormSearchListState extends State<FormSearchList> {
                     result.then((value) async {
                       if (value) {
                         ListCode().setCurrentList(_searchListCode.text);
+                        notificateSearchStatus(true);
+                      }else{
+                        notificateSearchStatus(false);
                       }
-                      Navigator.pop(context);
+                      // TO DO Fazer um modal legal
+                      //Navigator.pop(context);
                     });
                   }
                 },
@@ -72,5 +76,21 @@ class _FormSearchListState extends State<FormSearchList> {
         ),
       ),
     );
+  }
+
+  void notificateSearchStatus(bool isListFounded) {
+    if (isListFounded) {
+      final snackBar = SnackBar(
+        content: Text('Lista selecionada com sucesso !', textAlign: TextAlign.center,),
+        backgroundColor: Colors.green[900],
+      );
+      Scaffold.of(context).showSnackBar(snackBar);
+    } else {
+      final snackBar = SnackBar(
+        content: Text('Código de lista não encontrado !', textAlign: TextAlign.center,),
+        backgroundColor: Color.fromARGB(255, 236, 78, 32),
+      );
+      Scaffold.of(context).showSnackBar(snackBar);
+    }
   }
 }

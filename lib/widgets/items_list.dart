@@ -19,7 +19,7 @@ class _ItemsListState extends State<ItemsList> {
   @override
   void initState() {
     super.initState();
-        connectivitySubscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult connectivityResult) {
+      connectivitySubscription = Connectivity().onConnectivityChanged.listen((ConnectivityResult connectivityResult) {
       if (connectivityResult == ConnectivityResult.none) {
         showConnectionState(false);
       }
