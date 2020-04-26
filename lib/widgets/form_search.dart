@@ -52,7 +52,7 @@ class _FormSearchListState extends State<FormSearchList> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: RaisedButton(
-                color: Color.fromARGB(255, 0, 38, 66),
+                color: Color.fromARGB(255, 236, 78, 32),
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     setState(() {
@@ -85,7 +85,7 @@ class _FormSearchListState extends State<FormSearchList> {
                     ),
                     Text(
                       'Buscar',
-                      style: TextStyle(color: Colors.orange[50]),
+                      style: TextStyle(color: Colors.orange[50], fontSize: 20.0, fontWeight: FontWeight.bold),
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 10.0),

@@ -38,9 +38,9 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
           child: Padding(
             padding: EdgeInsets.only(
               top: 4.0,
-              bottom: 4.0,
-              left: 8.0,
-              right: 8.0,
+              bottom: 8.0,
+              left: 12.0,
+              right: 12.0,
             ),
             child: FormRegister(),
           )

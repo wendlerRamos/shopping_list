@@ -77,7 +77,7 @@ class _NewListScreenState extends State<NewListScreen> {
           bottom: 5.0,
           left: 10.0,
           right: 10.0,
-          top: 10.0,
+          top: 30.0,
         ),
         child: Column(
           children: <Widget>[
