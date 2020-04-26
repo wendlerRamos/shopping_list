@@ -42,4 +42,11 @@ class ListCode{
     _storageInstance.setStringList('list_codes', this._historyOfCodes);
   }
 
+  List<String> getLastShoppingLists(){
+    if(_historyOfCodes == null){
+      return [];
+    }
+    return _historyOfCodes;
+  }
+
 }
