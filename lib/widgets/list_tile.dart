@@ -57,7 +57,7 @@ class ShoppingListTile extends StatelessWidget {
                     color: (_index % 2) != 0
                         ? Colors.white
                         : Color.fromARGB(255, 0, 38, 66),
-                    fontSize: 30.0,
+                    fontSize: 25.0,
                     fontWeight: FontWeight.bold),
               ),
               Expanded(
