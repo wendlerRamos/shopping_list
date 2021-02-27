@@ -61,16 +61,6 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
     var _scaffoldState = GlobalKey<ScaffoldState>();
     return Scaffold(
       key: _scaffoldState,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 236, 78, 32),
-        child: Icon(
-          Icons.refresh,
-          size: 30.0,
-        ),
-        onPressed: () {
-          setState(() {});
-        },
-      ),
       body: Padding(
         padding: EdgeInsets.only(top: 5.0, bottom: 2.0, left: 5.0, right: 5.0),
         child: Column(
