@@ -21,8 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/search_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,8 +43,13 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -69,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614454720520</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Formatting">
+      <created>1614455125556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614455125556</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,14 +96,20 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Some layout adjustments" />
     <MESSAGE value="Removing floating button" />
     <MESSAGE value="Updating splash screen colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating splash screen colors" />
+    <MESSAGE value="Formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formatting" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="429" y="243" key="#Plugins" timestamp="1614458072415">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="429" y="243" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1614458072415" />
     <state width="1455" height="281" key="GridCell.Tab.0.bottom" timestamp="1614454691242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -106,9 +126,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1455" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614454691242" />
+    <state x="176" y="226" key="RollbackChangesDialog" timestamp="1614457835107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="176" y="226" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614457835107" />
     <state x="457" y="261" width="585" height="534" key="find.popup" timestamp="1614454920490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="457" y="261" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614454920490" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1614458050061">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614458050061" />
   </component>
 </project>
