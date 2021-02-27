@@ -1,11 +1,12 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
+
 import 'item_widget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connectivity/connectivity.dart';
 
 class ItemsList extends StatefulWidget {
   @override

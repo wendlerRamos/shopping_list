@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:random_string/random_string.dart';
-import 'package:shopping_list/datas/item_data.dart';
-import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
+import 'package:random_string/random_string.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
 
 class ListModel extends Model {
