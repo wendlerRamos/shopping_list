@@ -48,7 +48,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
             'Ou escolha uma do seu histórico',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 30.0,
+              fontSize: 25.0,
               color: Color.fromARGB(255, 0, 38, 66),
             ),
             textAlign: TextAlign.center,

@@ -12,6 +12,7 @@ class _FormRegisterState extends State<FormRegister> {
   String _currentState;
   String _listCode = ListCode().getCurrentList();
   List _option = ["NECESSARIO", "DESEJAVEL"];
+
   List<DropdownMenuItem<String>> getDropDownMenuItems() {
     List<DropdownMenuItem<String>> items = new List();
     for (String city in _option) {
@@ -25,26 +26,23 @@ class _FormRegisterState extends State<FormRegister> {
   final _itemController = TextEditingController();
   final _qtController = TextEditingController(text: "1");
   final _maxValueController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
-    if(_currentState == null){
+    if (_currentState == null) {
       _dropDownMenuItems = getDropDownMenuItems();
       _currentState = _dropDownMenuItems[0].value;
     }
 
-    if(_listCode == null){
+    if (_listCode == null) {
       return Row();
     }
-    
+
     return Form(
-      
       key: _formKey,
       child: Column(
-        
         children: <Widget>[
           Row(
-            
             children: <Widget>[
               Expanded(
                 flex: 3,
@@ -55,7 +53,10 @@ class _FormRegisterState extends State<FormRegister> {
                     labelText: "Produto",
                   ),
                   validator: (value) {
-                    if (value.isEmpty) return "Campo obrigatório"; else return null;
+                    if (value.isEmpty)
+                      return "Campo obrigatório";
+                    else
+                      return null;
                   },
                 ),
               ),
@@ -71,7 +72,10 @@ class _FormRegisterState extends State<FormRegister> {
                   ),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   validator: (value) {
-                    if (value.isEmpty) return "Campo obrigatório"; else return null;
+                    if (value.isEmpty)
+                      return "Campo obrigatório";
+                    else
+                      return null;
                   },
                   //initialValue: "1",
                 ),
@@ -88,9 +92,9 @@ class _FormRegisterState extends State<FormRegister> {
                     value: _currentState,
                     items: _dropDownMenuItems,
                     hint: Text('Prioridade'),
+                    itemHeight: 75,
                     onChanged: changedDropDownItem,
-                  )
-              ),
+                  )),
               SizedBox(
                 width: 10.0,
               ),
@@ -118,17 +122,22 @@ class _FormRegisterState extends State<FormRegister> {
                     if (_formKey.currentState.validate()) {
                       ItemList itemList = ItemList();
                       itemList.name = _itemController.text;
-                      itemList.quantity = double.parse(_qtController.text.replaceAll(new RegExp(r','), '.'));
+                      itemList.quantity = double.parse(
+                          _qtController.text.replaceAll(new RegExp(r','), '.'));
                       if (_maxValueController.text != "") {
-                        itemList.maxValue =
-                            double.tryParse(_maxValueController.text.replaceAll(new RegExp(r','), '.'));
+                        itemList.maxValue = double.tryParse(_maxValueController
+                            .text
+                            .replaceAll(new RegExp(r','), '.'));
                       }
                       itemList.priority = _currentState.toString();
                       ListModel(_listCode).addProductToList(itemList);
                       _qtController.text = "1";
                       _itemController.text = "";
                       _maxValueController.text = "";
-                      final snackBar = SnackBar(content: Text('Inserido com sucesso!'), backgroundColor: Color.fromARGB(255, 0, 38, 66),);
+                      final snackBar = SnackBar(
+                        content: Text('Inserido com sucesso !'),
+                        backgroundColor: Color.fromARGB(255, 0, 38, 66),
+                      );
                       Scaffold.of(context).showSnackBar(snackBar);
                     }
                   },

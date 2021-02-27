@@ -20,34 +20,40 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
 
     if (_listCode != null) {
       _listCodeCard = Card(
-          borderOnForeground: true,
-          child: Padding(
-            padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'Código da Lista: \t \t',
-                  style: TextStyle(fontSize: 20.0),
+        borderOnForeground: true,
+        child: Padding(
+          padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Código da Lista: \t \t',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              SelectableText(
+                _listCode,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontStyle: FontStyle.italic,
                 ),
-                SelectableText(_listCode,
-                    style:
-                        TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic)),
-              ],
-            ),
-          ));
+              ),
+            ],
+          ),
+        ),
+      );
 
       _formCard = Card(
-          borderOnForeground: true,
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: 4.0,
-              bottom: 8.0,
-              left: 12.0,
-              right: 12.0,
-            ),
-            child: FormRegister(),
-          ));
+        borderOnForeground: true,
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: 4.0,
+            bottom: 8.0,
+            left: 12.0,
+            right: 12.0,
+          ),
+          child: FormRegister(),
+        ),
+      );
     } else {
       _listCodeCard = Row();
       _formCard = Row();

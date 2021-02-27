@@ -38,7 +38,7 @@ class _FormSearchListState extends State<FormSearchList> {
               controller: _searchListCode,
               autofocus: false,
               decoration: const InputDecoration(
-                icon: Icon(Icons.search),
+                prefixIcon: Icon(Icons.search),
                 hintText: 'Informe o código da lista',
                 labelText: 'Código *',
               ),
