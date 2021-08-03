@@ -42,107 +42,85 @@ class _FormRegisterState extends State<FormRegister> {
       key: _formKey,
       child: Column(
         children: <Widget>[
-          Row(
+          Column(
             children: <Widget>[
-              Expanded(
-                flex: 3,
-                child: TextFormField(
-                  autocorrect: true,
-                  controller: _itemController,
-                  decoration: InputDecoration(
-                    labelText: "Produto",
-                  ),
-                  validator: (value) {
-                    if (value.isEmpty)
-                      return "Campo obrigatório";
-                    else
-                      return null;
-                  },
+              TextFormField(
+                autocorrect: true,
+                controller: _itemController,
+                decoration: InputDecoration(
+                  labelText: "Produto",
                 ),
+                validator: (value) {
+                  if (value.isEmpty)
+                    return "Campo obrigatório";
+                  else
+                    return null;
+                },
               ),
-              SizedBox(
-                width: 10.0,
-              ),
-              Expanded(
-                flex: 1,
-                child: TextFormField(
-                  controller: _qtController,
-                  decoration: InputDecoration(
-                    labelText: "Qt",
-                  ),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  validator: (value) {
-                    if (value.isEmpty)
-                      return "Campo obrigatório";
-                    else
-                      return null;
-                  },
-                  //initialValue: "1",
+              TextFormField(
+                controller: _qtController,
+                decoration: InputDecoration(
+                  labelText: "Qt",
                 ),
-              )
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                  flex: 4,
-                  child: DropdownButton(
-                    value: _currentState,
-                    items: _dropDownMenuItems,
-                    hint: Text('Prioridade'),
-                    itemHeight: 75,
-                    onChanged: changedDropDownItem,
-                  )),
-              SizedBox(
-                width: 10.0,
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                validator: (value) {
+                  if (value.isEmpty)
+                    return "Campo obrigatório";
+                  else
+                    return null;
+                },
+                //initialValue: "1",
               ),
-              Expanded(
-                flex: 4,
-                child: TextFormField(
-                  controller: _maxValueController,
-                  decoration: InputDecoration(
-                    labelText: "Valor Maximo",
-                  ),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  //obscureText: true,
+              TextFormField(
+                controller: _maxValueController,
+                decoration: InputDecoration(
+                  labelText: "Valor Maximo",
                 ),
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
+                //obscureText: true,
               ),
-              SizedBox(
-                width: 20.0,
+              DropdownButton(
+                value: _currentState,
+                items: _dropDownMenuItems,
+                isExpanded: true,
+                hint: Text('Prioridade'),
+                //itemHeight: 75,
+                onChanged: changedDropDownItem,
               ),
-              Expanded(
-                flex: 2,
-                child: RaisedButton(
-                  color: Color.fromARGB(255, 236, 78, 32),
-                  child: Text("ADD"),
-                  textColor: Colors.white,
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      ItemList itemList = ItemList();
-                      itemList.name = _itemController.text;
-                      itemList.quantity = double.parse(
-                          _qtController.text.replaceAll(new RegExp(r','), '.'));
-                      if (_maxValueController.text != "") {
-                        itemList.maxValue = double.tryParse(_maxValueController
-                            .text
-                            .replaceAll(new RegExp(r','), '.'));
+              SizedBox(height: 10.0,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  RaisedButton(
+                    color: Color.fromARGB(255, 236, 78, 32),
+                    child: Text("ADICIONAR"),
+                    textColor: Colors.white,
+                    onPressed: () {
+                      if (_formKey.currentState.validate()) {
+                        ItemList itemList = ItemList();
+                        itemList.name = _itemController.text;
+                        itemList.quantity = double.parse(
+                            _qtController.text.replaceAll(new RegExp(r','), '.'));
+                        if (_maxValueController.text != "") {
+                          itemList.maxValue = double.tryParse(_maxValueController
+                              .text
+                              .replaceAll(new RegExp(r','), '.'));
+                        }
+                        itemList.priority = _currentState.toString();
+                        ListModel(_listCode).addProductToList(itemList);
+                        _qtController.text = "1";
+                        _itemController.text = "";
+                        _maxValueController.text = "";
+                        final snackBar = SnackBar(
+                          content: Text('Inserido com sucesso !'),
+                          backgroundColor: Color.fromARGB(255, 0, 38, 66),
+                        );
+                        Scaffold.of(context).showSnackBar(snackBar);
                       }
-                      itemList.priority = _currentState.toString();
-                      ListModel(_listCode).addProductToList(itemList);
-                      _qtController.text = "1";
-                      _itemController.text = "";
-                      _maxValueController.text = "";
-                      final snackBar = SnackBar(
-                        content: Text('Inserido com sucesso !'),
-                        backgroundColor: Color.fromARGB(255, 0, 38, 66),
-                      );
-                      Scaffold.of(context).showSnackBar(snackBar);
-                    }
-                  },
-                ),
-              ),
+                    },
+                  ),
+                ],
+              )
             ],
           ),
         ],

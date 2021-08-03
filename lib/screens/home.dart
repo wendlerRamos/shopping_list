@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   PageController pageController = PageController(
     initialPage: 1,
-    keepPage: true,
+    keepPage: false,
   );
 
   //Used to integrate page view and bottom navigation
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         duration: Duration(
           milliseconds: 300,
         ),
-        curve: Curves.ease,
+        curve: Curves.easeInOutCubic,
       );
     });
   }
@@ -58,19 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
   void bottomTapped(int index) {
     setState(() {
       bottomSelectedIndex = index;
-      pageController.animateToPage(
-        index,
-        duration: Duration(
-          milliseconds: 300,
-        ),
-        curve: Curves.ease,
-      );
+      pageController.jumpToPage(index);
     });
   }
 
   Widget buildPageView() {
     return PageView(
-      pageSnapping: true,
+      physics:NeverScrollableScrollPhysics(),
       controller: pageController,
       onPageChanged: (index) {
         pageChanged(index);

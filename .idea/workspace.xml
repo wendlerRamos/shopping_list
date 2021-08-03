@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -24,13 +27,17 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\wendl\.android\avd\Pixel_4_XL_API_30.avd]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -40,10 +47,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/android" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -51,6 +60,7 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -106,37 +116,49 @@
     <option name="LAST_COMMIT_MESSAGE" value="Formatting" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="429" y="243" key="#Plugins" timestamp="1614458072415">
+    <state x="335" y="164" key="#Plugins" timestamp="1627817265396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="429" y="243" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1614458072415" />
-    <state width="1455" height="281" key="GridCell.Tab.0.bottom" timestamp="1614454691242">
+    <state x="335" y="164" key="#Plugins/0.0.1920.1040@0.0.1920.1040" timestamp="1627817265396" />
+    <state x="1120" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1628027051675">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1455" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614454691242" />
-    <state width="1455" height="281" key="GridCell.Tab.0.center" timestamp="1614454691242">
+    <state x="1120" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1628027051675" />
+    <state x="1127" y="448" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1626557927210">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1455" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614454691242" />
-    <state width="1455" height="281" key="GridCell.Tab.0.left" timestamp="1614454691242">
+    <state x="1127" y="448" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1626557927210" />
+    <state x="753" y="257" key="#xdebugger.evaluate" timestamp="1627819106601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1455" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614454691242" />
-    <state width="1455" height="281" key="GridCell.Tab.0.right" timestamp="1614454691242">
+    <state x="753" y="257" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1627819106601" />
+    <state x="87" y="100" width="1287" height="847" key="AVDManager" timestamp="1627853257601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1455" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614454691242" />
-    <state x="176" y="226" key="RollbackChangesDialog" timestamp="1614457835107">
+    <state x="87" y="100" width="1287" height="847" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1627853257601" />
+    <state width="1427" height="240" key="GridCell.Tab.0.bottom" timestamp="1627843247956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="176" y="226" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614457835107" />
-    <state x="457" y="261" width="585" height="534" key="find.popup" timestamp="1614454920490">
+    <state width="1427" height="240" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1627843247956" />
+    <state width="1427" height="240" key="GridCell.Tab.0.center" timestamp="1627843247956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="457" y="261" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614454920490" />
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1614458050061">
+    <state width="1427" height="240" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1627843247956" />
+    <state width="1427" height="240" key="GridCell.Tab.0.left" timestamp="1627843247955">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614458050061" />
+    <state width="1427" height="240" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1627843247955" />
+    <state width="1427" height="240" key="GridCell.Tab.0.right" timestamp="1627843247956">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1427" height="240" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1627843247956" />
+    <state x="451" y="256" width="585" height="534" key="find.popup" timestamp="1627824503820">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="451" y="256" width="585" height="534" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1627824503820" />
+    <state x="392" y="244" key="run.anything.popup" timestamp="1627779170568">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="392" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1627779170568" />
   </component>
 </project>

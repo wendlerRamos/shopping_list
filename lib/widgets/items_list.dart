@@ -14,28 +14,28 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  StreamSubscription connectivitySubscription;
-  ConnectivityResult _previousResult;
+  //StreamSubscription connectivitySubscription;
+  // ConnectivityResult _previousResult;
 
   @override
   void initState() {
     super.initState();
-    connectivitySubscription = Connectivity()
-        .onConnectivityChanged
-        .listen((ConnectivityResult connectivityResult) {
-      if (connectivityResult == ConnectivityResult.none) {
-        showConnectionState(false);
-      } else if (_previousResult == ConnectivityResult.none) {
-        showConnectionState(true);
-      }
-      _previousResult = connectivityResult;
-    });
+    // connectivitySubscription = Connectivity()
+    //     .onConnectivityChanged
+    //     .listen((ConnectivityResult connectivityResult) {
+    //   if (connectivityResult == ConnectivityResult.none) {
+    //     showConnectionState(false);
+    //   } else if (_previousResult == ConnectivityResult.none) {
+    //     showConnectionState(true);
+    //   }
+    //   _previousResult = connectivityResult;
+    // });
   }
 
   @override
   void dispose() {
     super.dispose();
-    connectivitySubscription.cancel();
+    //connectivitySubscription.cancel();
   }
 
   @override
@@ -157,21 +157,21 @@ class _ItemsListState extends State<ItemsList> {
     setState(() {});
   }
 
-  void showConnectionState(bool isOnline) {
-    if (isOnline != null) {
-      if (isOnline) {
-        final snackBar = SnackBar(
-          content: Text('Online !'),
-          backgroundColor: Colors.green[900],
-        );
-        Scaffold.of(context).showSnackBar(snackBar);
-      } else {
-        final snackBar = SnackBar(
-          content: Text('Você está offline'),
-          backgroundColor: Color.fromARGB(255, 236, 78, 32),
-        );
-        Scaffold.of(context).showSnackBar(snackBar);
-      }
-    }
-  }
+  // void showConnectionState(bool isOnline) {
+  //   if (isOnline != null) {
+  //     if (isOnline) {
+  //       final snackBar = SnackBar(
+  //         content: Text('Online !'),
+  //         backgroundColor: Colors.green[900],
+  //       );
+  //       Scaffold.of(context).showSnackBar(snackBar);
+  //     } else {
+  //       final snackBar = SnackBar(
+  //         content: Text('Você está offline'),
+  //         backgroundColor: Color.fromARGB(255, 236, 78, 32),
+  //       );
+  //       Scaffold.of(context).showSnackBar(snackBar);
+  //     }
+  //   }
+  // }
 }
