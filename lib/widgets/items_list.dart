@@ -14,22 +14,10 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  //StreamSubscription connectivitySubscription;
-  // ConnectivityResult _previousResult;
 
   @override
   void initState() {
     super.initState();
-    // connectivitySubscription = Connectivity()
-    //     .onConnectivityChanged
-    //     .listen((ConnectivityResult connectivityResult) {
-    //   if (connectivityResult == ConnectivityResult.none) {
-    //     showConnectionState(false);
-    //   } else if (_previousResult == ConnectivityResult.none) {
-    //     showConnectionState(true);
-    //   }
-    //   _previousResult = connectivityResult;
-    // });
   }
 
   @override
@@ -51,6 +39,7 @@ class _ItemsListState extends State<ItemsList> {
                 .collection('shoppingLists')
                 .document(_listCode)
                 .collection('products')
+                .orderBy('status', descending: false)
                 .snapshots(),
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (_listCode == null) {

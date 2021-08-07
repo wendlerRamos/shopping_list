@@ -71,6 +71,7 @@ class ListModel extends Model {
         .collection("shoppingLists")
         .document(listCode)
         .collection('products')
+        .orderBy('status')
         .getDocuments();
 
     products =
