@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -23,23 +26,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/app_widget.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/create_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/domain/ItemDto.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/save_item_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/find_current_shopping_list_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/domain/shopping_list_storage_dto.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/exceptions/failure.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/exceptions/not_found_exception.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/save_item_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/model/Item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/usecase/create_item_usecase.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/gateway/find_current_shopping_list_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/model/shopping_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/app_module_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/domain/item/usecase/create_item_test.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/domain/util/mock_util.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/list_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/form_new_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\wendl\.android\avd\Pixel_4_XL_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\wendl\.android\avd\Pixel_4_API.avd]" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1p4NewnMItbLEwEsjBha3Vt9nNC" />
@@ -53,13 +85,52 @@
     <property name="dart.analysis.tool.window.force.activate" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/domain/shopping_list" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Dart" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\shopping_list" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\application\item\entrypoint" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="should be left when current shopping list does not exists" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should be left when current shopping list does not exists" />
+      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="should find current shopping list on memory successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should find current shopping list on memory successfully" />
+      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="should inject save item successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should inject save item successfully" />
+      <option name="testFile" value="$PROJECT_DIR$/test/app_module_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in app_module_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/app_module_test.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests in find_current_shopping_list_provider_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter Test.should inject save item successfully" />
+        <item itemvalue="Flutter Test.tests in app_module_test.dart" />
+        <item itemvalue="Flutter Test.tests in find_current_shopping_list_provider_test.dart" />
+        <item itemvalue="Flutter Test.should find current shopping list on memory successfully" />
+        <item itemvalue="Flutter Test.should be left when current shopping list does not exists" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -123,5 +194,31 @@
     <MESSAGE value="Formatting" />
     <MESSAGE value="Updating layout" />
     <option name="LAST_COMMIT_MESSAGE" value="Updating layout" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart</url>
+          <line>14</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart</url>
+          <line>15</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart</url>
+          <line>16</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

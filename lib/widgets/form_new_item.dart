@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shopping_list/application/item/entrypoint/create_item.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/domain/item/model/Item.dart';
 import 'package:shopping_list/models/list_model.dart';
 
 class FormRegister extends StatefulWidget {
@@ -9,6 +12,7 @@ class FormRegister extends StatefulWidget {
 }
 
 class _FormRegisterState extends State<FormRegister> {
+  final createItem = Modular.get<CreateItem>();
   String _currentState;
   String _listCode = ListCode().getCurrentList();
   List _option = ["NECESSARIO", "DESEJAVEL"];
@@ -106,8 +110,11 @@ class _FormRegisterState extends State<FormRegister> {
                               .text
                               .replaceAll(new RegExp(r','), '.'));
                         }
+
                         itemList.priority = _currentState.toString();
-                        ListModel(_listCode).addProductToList(itemList);
+                        final item = Item(itemList.productId, itemList.name, itemList.quantity, itemList.priority, itemList.maxValue, itemList.status);
+                        createItem.execute(item);
+                        //ListModel(_listCode).addProductToList(itemList);
                         _qtController.text = "1";
                         _itemController.text = "";
                         _maxValueController.text = "";
