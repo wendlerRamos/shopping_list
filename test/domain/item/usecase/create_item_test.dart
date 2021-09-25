@@ -3,10 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shopping_list/domain/exceptions/failure.dart';
 import 'package:shopping_list/domain/exceptions/not_found_exception.dart';
-import 'package:shopping_list/domain/item/gateway/save_item_gateway.dart';
+import 'package:shopping_list/domain/item/gateway/output/save_item_gateway.dart';
 import 'package:shopping_list/domain/item/model/Item.dart';
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
-import 'package:shopping_list/domain/shopping_list/gateway/find_current_shopping_list_gateway.dart';
+import 'package:shopping_list/domain/shopping_list/gateway/output/find_current_shopping_list_gateway.dart';
 import '../../util/mock_util.dart';
 
 class FindCurrentListGatewayMock extends Mock implements FindCurrentShoppingListGateway {}

@@ -10,6 +10,10 @@ class ItemDto {
 
   ItemDto(this.productId, this.name, this.quantity, this.priority, this.maxValue, this.status);
 
+  Item toDomain() {
+    return Item(productId, name, quantity, priority, maxValue, status);
+  }
+
   Map<String, dynamic> toMap() {
     return {
       "id": productId,

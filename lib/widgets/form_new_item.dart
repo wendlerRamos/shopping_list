@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:shopping_list/application/item/entrypoint/create_item.dart';
+import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
+import 'package:shopping_list/application/item/gateway/firebase/domain/ItemDto.dart';
+import 'package:shopping_list/domain/item/gateway/input/create_item_input.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/domain/item/model/Item.dart';
@@ -12,7 +14,7 @@ class FormRegister extends StatefulWidget {
 }
 
 class _FormRegisterState extends State<FormRegister> {
-  final createItem = Modular.get<CreateItem>();
+  final itemController = Modular.get<ItemController>();
   String _currentState;
   String _listCode = ListCode().getCurrentList();
   List _option = ["NECESSARIO", "DESEJAVEL"];
@@ -27,9 +29,9 @@ class _FormRegisterState extends State<FormRegister> {
 
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   final _formKey = GlobalKey<FormState>();
-  final _itemController = TextEditingController();
-  final _qtController = TextEditingController(text: "1");
-  final _maxValueController = TextEditingController();
+  final _itemFieldController = TextEditingController();
+  final _quantityFieldController = TextEditingController(text: "1");
+  final _maxValueFieldController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class _FormRegisterState extends State<FormRegister> {
             children: <Widget>[
               TextFormField(
                 autocorrect: true,
-                controller: _itemController,
+                controller: _itemFieldController,
                 decoration: InputDecoration(
                   labelText: "Produto",
                 ),
@@ -62,7 +64,7 @@ class _FormRegisterState extends State<FormRegister> {
                 },
               ),
               TextFormField(
-                controller: _qtController,
+                controller: _quantityFieldController,
                 decoration: InputDecoration(
                   labelText: "Qt",
                 ),
@@ -76,7 +78,7 @@ class _FormRegisterState extends State<FormRegister> {
                 //initialValue: "1",
               ),
               TextFormField(
-                controller: _maxValueController,
+                controller: _maxValueFieldController,
                 decoration: InputDecoration(
                   labelText: "Valor Maximo",
                 ),
@@ -102,22 +104,22 @@ class _FormRegisterState extends State<FormRegister> {
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         ItemList itemList = ItemList();
-                        itemList.name = _itemController.text;
+                        itemList.name = _itemFieldController.text;
                         itemList.quantity = double.parse(
-                            _qtController.text.replaceAll(new RegExp(r','), '.'));
-                        if (_maxValueController.text != "") {
-                          itemList.maxValue = double.tryParse(_maxValueController
+                            _quantityFieldController.text.replaceAll(new RegExp(r','), '.'));
+                        if (_maxValueFieldController.text != "") {
+                          itemList.maxValue = double.tryParse(_maxValueFieldController
                               .text
                               .replaceAll(new RegExp(r','), '.'));
                         }
 
                         itemList.priority = _currentState.toString();
-                        final item = Item(itemList.productId, itemList.name, itemList.quantity, itemList.priority, itemList.maxValue, itemList.status);
-                        createItem.execute(item);
+                        final item = ItemDto(itemList.productId, itemList.name, itemList.quantity, itemList.priority, itemList.maxValue, itemList.status);
+                         itemController.createItem(item);
                         //ListModel(_listCode).addProductToList(itemList);
-                        _qtController.text = "1";
-                        _itemController.text = "";
-                        _maxValueController.text = "";
+                        _quantityFieldController.text = "1";
+                        _itemFieldController.text = "";
+                        _maxValueFieldController.text = "";
                         final snackBar = SnackBar(
                           content: Text('Inserido com sucesso !'),
                           backgroundColor: Color.fromARGB(255, 0, 38, 66),

@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shopping_list/app_module.dart';
-import 'package:shopping_list/application/item/entrypoint/create_item.dart';
+import 'package:shopping_list/domain/item/gateway/input/create_item_input.dart';
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
 
 class FirestoreMock extends Mock implements Firestore {}
@@ -19,7 +19,7 @@ main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test("should inject save item successfully", () {
-    final createItemUsecase = Modular.get<CreateItem>();
+    final createItemUsecase = Modular.get<CreateItemInput>();
     expect(createItemUsecase, isA<CreateItemUsecase>());
   });
 
