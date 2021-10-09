@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-//import 'package:scoped_model/scoped_model.dart';
 
 class ItemList{
   String productId;
@@ -10,15 +9,6 @@ class ItemList{
   bool status = false;
 
   ItemList();
-/*
-  ItemList(DocumentSnapshot document){
-    productId = document.documentID;
-    name = document.data["name"];
-    quantity = document.data["quantity"];
-    priority = document.data["priority"];
-    maxValue = document.data["maxValue"];
-    status = document.data["status"];
-  }*/
 
   ItemList.fromDocument(DocumentSnapshot document){
       productId = document.documentID;
