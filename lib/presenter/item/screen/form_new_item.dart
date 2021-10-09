@@ -74,14 +74,12 @@ class _FormRegisterState extends State<FormRegister> {
                     labelText: "Valor Maximo",
                   ),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  //obscureText: true,
                 ),
                 DropdownButton(
                   value: _currentState,
                   items: _dropDownMenuItems,
                   isExpanded: true,
                   hint: Text('Prioridade'),
-                  //itemHeight: 75,
                   onChanged: changedDropDownItem,
                 ),
                 SizedBox(
@@ -100,11 +98,7 @@ class _FormRegisterState extends State<FormRegister> {
                               _quantityFieldController, _maxValueFieldController, _currentState);
                           itemController.createItem(item);
                           resetFields();
-                          final snackBar = SnackBar(
-                            content: Text('Inserido com sucesso !'),
-                            backgroundColor: Color.fromARGB(255, 0, 38, 66),
-                          );
-                          Scaffold.of(context).showSnackBar(snackBar);
+                          displaySuccessSnackBar();
                         }
                       },
                     ),
@@ -122,6 +116,14 @@ class _FormRegisterState extends State<FormRegister> {
     _quantityFieldController.text = "1";
     _itemFieldController.text = "";
     _maxValueFieldController.text = "";
+  }
+
+  void displaySuccessSnackBar(){
+    final snackBar = SnackBar(
+      content: Text('Inserido com sucesso !'),
+      backgroundColor: Color.fromARGB(255, 0, 38, 66),
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
   }
 
   void changedDropDownItem(String selectedItem) {

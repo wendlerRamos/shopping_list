@@ -17,7 +17,6 @@ class ItemControllerImplementation implements ItemController {
 
   Future<Item> createItem(ItemDto itemDto) async {
     createItemInput.execute(itemDto.toDomain());
-    //TODO("Finish here")
   }
 
 }
