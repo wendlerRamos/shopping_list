@@ -10,6 +10,7 @@ import 'package:shopping_list/application/shopping_list/gateway/storage/storage_
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
+import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary_value.dart';
 
 class AppModule extends MainModule {
   @override
@@ -23,6 +24,7 @@ class AppModule extends MainModule {
         Bind((inject) => ItemControllerImplementation(inject())),
         Bind((inject) => CheckIfFieldIsEmptyImplementation()),
         Bind((inject) => ParseFormToItemDtoImplementation()),
+        Bind((inject) => ParseStringToMonetaryValueImplementation()),
       ];
 
   @override

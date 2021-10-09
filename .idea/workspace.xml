@@ -31,14 +31,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/presenter/item/controller/parse_form_to_item_dto.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/util/controller/check_if_field_is_empty.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/util/controller/check_if_field_is_number.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presenter/util/controller/parse_string_to_monetary_value.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +88,8 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\widget" />
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\input" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\output" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\shopping_list\gateway\output" />
@@ -184,7 +181,21 @@
       <option name="project" value="LOCAL" />
       <updated>1632589257431</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removing unused code">
+      <created>1633809272350</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1633809272350</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Removing comment and creating function to display snackbar">
+      <created>1633809598777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1633809598777</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,7 +217,9 @@
     <MESSAGE value="Formatting" />
     <MESSAGE value="Updating layout" />
     <MESSAGE value="Creating item and some configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating item and some configuration" />
+    <MESSAGE value="Removing unused code" />
+    <MESSAGE value="Removing comment and creating function to display snackbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing comment and creating function to display snackbar" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

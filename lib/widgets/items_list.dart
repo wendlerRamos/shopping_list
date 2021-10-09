@@ -1,12 +1,11 @@
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
 
-import 'item_widget.dart';
+import '../presenter/item/widget/item_widget.dart';
 
 class ItemsList extends StatefulWidget {
   @override
@@ -14,7 +13,6 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-
   @override
   void initState() {
     super.initState();
@@ -23,7 +21,6 @@ class _ItemsListState extends State<ItemsList> {
   @override
   void dispose() {
     super.dispose();
-    //connectivitySubscription.cancel();
   }
 
   @override
@@ -55,9 +52,7 @@ class _ItemsListState extends State<ItemsList> {
                       Text(
                         "Nenhuma Lista Selecionada",
                         textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 0, 38, 66),
-                            fontSize: 30.0),
+                        style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0),
                       ),
                       Text(
                         "Busque uma lista existente ou crie uma nova",
@@ -88,9 +83,7 @@ class _ItemsListState extends State<ItemsList> {
                       ),
                       Text(
                         "Ops... Parece que algo deu errado!",
-                        style: TextStyle(
-                            color: Color.fromARGB(255, 0, 38, 66),
-                            fontSize: 30.0),
+                        style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0),
                       ),
                     ],
                   ),
@@ -123,8 +116,7 @@ class _ItemsListState extends State<ItemsList> {
                   ),
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
-                  children:
-                      snapshot.data.documents.map((DocumentSnapshot document) {
+                  children: snapshot.data.documents.map((DocumentSnapshot document) {
                     ItemList _itemList = ItemList.fromDocument(document);
                     //print(_itemList);
                     return ItemWidget(
@@ -145,22 +137,4 @@ class _ItemsListState extends State<ItemsList> {
   Future<void> _refresh() async {
     setState(() {});
   }
-
-  // void showConnectionState(bool isOnline) {
-  //   if (isOnline != null) {
-  //     if (isOnline) {
-  //       final snackBar = SnackBar(
-  //         content: Text('Online !'),
-  //         backgroundColor: Colors.green[900],
-  //       );
-  //       Scaffold.of(context).showSnackBar(snackBar);
-  //     } else {
-  //       final snackBar = SnackBar(
-  //         content: Text('Você está offline'),
-  //         backgroundColor: Color.fromARGB(255, 236, 78, 32),
-  //       );
-  //       Scaffold.of(context).showSnackBar(snackBar);
-  //     }
-  //   }
-  // }
 }
