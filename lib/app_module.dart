@@ -8,6 +8,8 @@ import 'package:shopping_list/application/item/gateway/provider/save_item_provid
 import 'package:shopping_list/application/shopping_list/gateway/provider/find_current_shopping_list_provider.dart';
 import 'package:shopping_list/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart';
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
+import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
+import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
 
 class AppModule extends MainModule {
   @override
@@ -19,6 +21,8 @@ class AppModule extends MainModule {
         Bind((inject) => FindCurrentShoppingListProvider(inject())),
         Bind((inject) => StorageShoppingListRepository()),
         Bind((inject) => ItemControllerImplementation(inject())),
+        Bind((inject) => CheckIfFieldIsEmptyImplementation()),
+        Bind((inject) => ParseFormToItemDtoImplementation()),
       ];
 
   @override
