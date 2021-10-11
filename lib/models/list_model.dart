@@ -41,7 +41,7 @@ class ListModel extends Model {
     notifyListeners();
   }
 
-  static void removeItem2(ItemList itemList, listCode) {
+  static void removeItem2(ItemList itemList, listCode) async {
     Firestore.instance
         .collection("shoppingLists")
         .document(listCode)

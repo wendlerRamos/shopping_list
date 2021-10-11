@@ -31,11 +31,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/presenter/util/controller/parse_string_to_monetary_value.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/entrypoint/shopping_list_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/domain/ShoppingListFirestoreResponse.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/find_shopping_list_by_code_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/save_shopping_list_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/exceptions/failure_to_create_exception.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/gateway/input/create_shopping_list_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/gateway/output/find_shopping_list_by_code_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/gateway/output/save_shopping_list_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/shopping_list/usecase/create_shopping_list.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/utils/usecase/generate_random_code.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/domain/shopping_list/usecase/create_shopping_list_test.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/list_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/new_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/new_list_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +62,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin File" />
+        <option value="Dart File" />
       </list>
     </option>
   </component>
@@ -79,7 +95,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/domain/shopping_list" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Dart" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -88,29 +104,29 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\widget" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\input" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\output" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\shopping_list\gateway\output" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
-    <configuration name="should be left when current shopping list does not exists" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="should be left when current shopping list does not exists" />
-      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
-      <option name="useRegexp" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="should find current shopping list on memory successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testName" value="should find current shopping list on memory successfully" />
-      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
+    <configuration name="should create a list by code successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should create a list by code successfully" />
+      <option name="testFile" value="$PROJECT_DIR$/test/domain/shopping_list/usecase/create_shopping_list_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="should inject save item successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="should inject save item successfully" />
       <option name="testFile" value="$PROJECT_DIR$/test/app_module_test.dart" />
+      <option name="useRegexp" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="should not create shopping list when code already exists" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testName" value="should not create shopping list when code already exists" />
+      <option name="testFile" value="$PROJECT_DIR$/test/domain/shopping_list/usecase/create_shopping_list_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
@@ -126,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flutter Test.should not create shopping list when code already exists" />
+        <item itemvalue="Flutter Test.should create a list by code successfully" />
         <item itemvalue="Flutter Test.tests in find_current_shopping_list_provider_test.dart" />
         <item itemvalue="Flutter Test.tests in app_module_test.dart" />
         <item itemvalue="Flutter Test.should inject save item successfully" />
-        <item itemvalue="Flutter Test.should find current shopping list on memory successfully" />
-        <item itemvalue="Flutter Test.should be left when current shopping list does not exists" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633809598777</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Updating item tile style">
+      <created>1633813753760</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1633813753760</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,7 +242,24 @@
     <MESSAGE value="Creating item and some configuration" />
     <MESSAGE value="Removing unused code" />
     <MESSAGE value="Removing comment and creating function to display snackbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing comment and creating function to display snackbar" />
+    <MESSAGE value="Updating item tile style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating item tile style" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/models/list_model.dart</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/models/list_model.dart</url>
+          <line>20</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

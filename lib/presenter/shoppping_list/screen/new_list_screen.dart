@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
 import 'package:shopping_list/models/list_model.dart';
 
 class NewListScreen extends StatefulWidget {
@@ -7,7 +9,7 @@ class NewListScreen extends StatefulWidget {
 }
 
 class _NewListScreenState extends State<NewListScreen> {
-
+  final createShoppingList = Modular.get<CreateShoppingList>();
   bool _isLoading = false;
 
   @override
@@ -23,12 +25,12 @@ class _NewListScreenState extends State<NewListScreen> {
             color: Colors.orange[50],
             size: 20.0,
           ),
+          SizedBox(
+            width: 10.0,
+          ),
           Text(
-            '\t\tCriar Lista',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
-                color: Colors.orange[50]),
+            'Criar Lista',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: Colors.orange[50]),
           )
         ],
       ),
@@ -37,6 +39,7 @@ class _NewListScreenState extends State<NewListScreen> {
           _isLoading = true;
         });
         String newCodeList = await ListModel.createList();
+
         if (newCodeList != null) {
           final snackBar = SnackBar(
             content: Text(
@@ -62,11 +65,9 @@ class _NewListScreenState extends State<NewListScreen> {
       },
     );
 
-    if(_isLoading){
+    if (_isLoading) {
       return Center(
-        child: CircularProgressIndicator(
-
-        ),
+        child: CircularProgressIndicator(),
       );
     }
 
@@ -90,14 +91,9 @@ class _NewListScreenState extends State<NewListScreen> {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 10.0,
-            ),
-            Text(
-                'Cria uma nova lista com um código aleatório, que é usado para acessá-la'),
-            SizedBox(
-              height: 10.0,
-            ),
+            SizedBox(height: 10.0),
+            Text('Cria uma nova lista com um código aleatório, que é usado para acessá-la'),
+            SizedBox(height: 10.0),
             _continuaButton
           ],
         ),

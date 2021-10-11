@@ -92,13 +92,15 @@ class _FormRegisterState extends State<FormRegister> {
                       color: Color.fromARGB(255, 236, 78, 32),
                       child: Text("ADICIONAR"),
                       textColor: Colors.white,
-                      onPressed: () {
+                      onPressed: () async {
                         if (_formKey.currentState.validate()) {
                           final item = parseFormToItemDto.execute(_itemFieldController,
                               _quantityFieldController, _maxValueFieldController, _currentState);
-                          itemController.createItem(item);
-                          resetFields();
-                          displaySuccessSnackBar();
+                          final result = await itemController.createItem(item);
+                          if(result){
+                            resetFields();
+                            displaySuccessSnackBar();
+                          }
                         }
                       },
                     ),

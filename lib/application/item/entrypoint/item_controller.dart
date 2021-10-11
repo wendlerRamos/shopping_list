@@ -1,11 +1,10 @@
 
 import 'package:shopping_list/application/item/gateway/firebase/domain/ItemDto.dart';
 import 'package:shopping_list/domain/item/gateway/input/create_item_input.dart';
-import 'package:shopping_list/domain/item/model/Item.dart';
 
 abstract class ItemController {
 
-  Future<Item> createItem(ItemDto itemDto);
+  Future<bool> createItem(ItemDto itemDto);
 
 }
 
@@ -15,8 +14,9 @@ class ItemControllerImplementation implements ItemController {
 
   ItemControllerImplementation(this.createItemInput);
 
-  Future<Item> createItem(ItemDto itemDto) async {
-    createItemInput.execute(itemDto.toDomain());
+  Future<bool> createItem(ItemDto itemDto) async {
+    var createdItem = await createItemInput.execute(itemDto.toDomain());
+    return (createdItem.isLeft()) ? false : true;
   }
 
 }
