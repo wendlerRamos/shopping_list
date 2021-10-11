@@ -3,11 +3,11 @@ import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/domain/shopping_list/gateway/input/create_shopping_list_input.dart';
 import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
 
-abstract class CreateShoppingList {
+abstract class CreateShoppingListController {
   Future<Either<Exception, ShoppingList>> createShoppingList();
 }
 
-class ShoppingListController implements CreateShoppingList {
+class ShoppingListController implements CreateShoppingListController {
   final CreateShoppingListInput createShoppingListInput;
 
   ShoppingListController(this.createShoppingListInput);

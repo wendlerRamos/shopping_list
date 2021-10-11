@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
-import 'package:shopping_list/models/list_model.dart';
 
 class NewListScreen extends StatefulWidget {
   @override
@@ -9,7 +8,7 @@ class NewListScreen extends StatefulWidget {
 }
 
 class _NewListScreenState extends State<NewListScreen> {
-  final createShoppingList = Modular.get<CreateShoppingList>();
+  final createShoppingList = Modular.get<CreateShoppingListController>();
   bool _isLoading = false;
 
   @override
@@ -38,12 +37,12 @@ class _NewListScreenState extends State<NewListScreen> {
         setState(() {
           _isLoading = true;
         });
-        String newCodeList = await ListModel.createList();
+        final newList = (await createShoppingList.createShoppingList()).getOrElse(() => null);
 
-        if (newCodeList != null) {
+        if (newList != null) {
           final snackBar = SnackBar(
             content: Text(
-              'Lista criada com sucesso !\n Código ' + newCodeList,
+              'Lista criada com sucesso !\n Código ${newList.code}',
               textAlign: TextAlign.center,
             ),
             backgroundColor: Colors.green[900],
