@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
+import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
 
 class NewListScreen extends StatefulWidget {
   @override
@@ -19,14 +20,8 @@ class _NewListScreenState extends State<NewListScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Icon(
-            Icons.add_circle,
-            color: Colors.orange[50],
-            size: 20.0,
-          ),
-          SizedBox(
-            width: 10.0,
-          ),
+          Icon(Icons.add_circle, color: Colors.orange[50], size: 20.0),
+          SizedBox(width: 10.0),
           Text(
             'Criar Lista',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0, color: Colors.orange[50]),
@@ -38,26 +33,7 @@ class _NewListScreenState extends State<NewListScreen> {
           _isLoading = true;
         });
         final newList = (await createShoppingList.createShoppingList()).getOrElse(() => null);
-
-        if (newList != null) {
-          final snackBar = SnackBar(
-            content: Text(
-              'Lista criada com sucesso !\n Código ${newList.code}',
-              textAlign: TextAlign.center,
-            ),
-            backgroundColor: Colors.green[900],
-          );
-          Scaffold.of(context).showSnackBar(snackBar);
-        } else {
-          final snackBar = SnackBar(
-            content: Text(
-              'Houve uma falha na criação da lista, tente novamente mais tarde !',
-              textAlign: TextAlign.center,
-            ),
-            backgroundColor: Colors.red[900],
-          );
-          Scaffold.of(context).showSnackBar(snackBar);
-        }
+        (newList != null) ? showSuccessSnackBar(newList, context) : showFailureSnackBar(context);
         setState(() {
           _isLoading = false;
         });
@@ -72,31 +48,49 @@ class _NewListScreenState extends State<NewListScreen> {
 
     return Container(
       child: Card(
-          child: Padding(
-        padding: EdgeInsets.only(
-          bottom: 5.0,
-          left: 10.0,
-          right: 10.0,
-          top: 30.0,
-        ),
-        child: Column(
-          children: <Widget>[
-            Text(
-              'Criar Lista',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
-                color: Color.fromARGB(255, 0, 38, 66),
+        child: Padding(
+          padding: EdgeInsets.only(bottom: 5.0, left: 10.0, right: 10.0, top: 30.0),
+          child: Column(
+            children: <Widget>[
+              Text(
+                'Criar Lista',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0,
+                  color: Color.fromARGB(255, 0, 38, 66),
+                ),
+                textAlign: TextAlign.center,
               ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(height: 10.0),
-            Text('Cria uma nova lista com um código aleatório, que é usado para acessá-la'),
-            SizedBox(height: 10.0),
-            _continuaButton
-          ],
+              SizedBox(height: 10.0),
+              Text('Cria uma nova lista com um código aleatório, que é usado para acessá-la'),
+              SizedBox(height: 10.0),
+              _continuaButton
+            ],
+          ),
         ),
-      )),
+      ),
     );
+  }
+
+  void showSuccessSnackBar(ShoppingList newList, BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text(
+        'Lista criada com sucesso !\n Código ${newList.code}',
+        textAlign: TextAlign.center,
+      ),
+      backgroundColor: Colors.green[900],
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
+  }
+
+  void showFailureSnackBar(BuildContext context) {
+    final snackBar = SnackBar(
+      content: Text(
+        'Houve uma falha na criação da lista, tente novamente mais tarde !',
+        textAlign: TextAlign.center,
+      ),
+      backgroundColor: Colors.red[900],
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
   }
 }
