@@ -3,6 +3,7 @@ import 'package:shopping_list/domain/exceptions/failure_to_create_exception.dart
 import 'package:shopping_list/domain/shopping_list/gateway/input/create_shopping_list_input.dart';
 import 'package:shopping_list/domain/shopping_list/gateway/output/find_shopping_list_by_code_gateway.dart';
 import 'package:shopping_list/domain/shopping_list/gateway/output/save_shopping_list_gateway.dart';
+import 'package:shopping_list/domain/shopping_list/gateway/output/update_current_list_gateway.dart';
 import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
 import 'package:shopping_list/domain/utils/usecase/generate_random_code.dart';
 
@@ -10,9 +11,10 @@ class CreateShoppingList implements CreateShoppingListInput {
   final FindShoppingListByCodeGateway findShoppingListByCodeGateway;
   final SaveShoppingListGateway saveShoppingListGateway;
   final GenerateRandomCode generateRandomCode;
+  final UpdateCurrentShoppingListGateway updateCurrentShoppingListGateway;
 
-  CreateShoppingList(
-      this.findShoppingListByCodeGateway, this.saveShoppingListGateway, this.generateRandomCode);
+  CreateShoppingList(this.findShoppingListByCodeGateway, this.saveShoppingListGateway,
+      this.generateRandomCode, this.updateCurrentShoppingListGateway);
 
   @override
   Future<Either<Exception, ShoppingList>> execute() async {
@@ -29,7 +31,11 @@ class CreateShoppingList implements CreateShoppingListInput {
 
     if (!isValidCode) return Left(FailureToCreateException("Failure to create list"));
 
-    return await saveShoppingListGateway.execute(newCodeList);
+    final createdList = await saveShoppingListGateway.execute(newCodeList);
+    if (createdList.isRight()) {
+      updateCurrentShoppingListGateway.execute(createdList.getOrElse(() => null));
+    }
+    return createdList;
   }
 
   Future<bool> checkIfListAlreadyExists(String code) async {

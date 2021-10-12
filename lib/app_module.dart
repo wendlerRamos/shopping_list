@@ -11,10 +11,12 @@ import 'package:shopping_list/application/shopping_list/gateway/provider/find_cu
 import 'package:shopping_list/application/shopping_list/gateway/provider/find_last_shopping_lists_provider.dart';
 import 'package:shopping_list/application/shopping_list/gateway/provider/find_shopping_list_by_code_provider.dart';
 import 'package:shopping_list/application/shopping_list/gateway/provider/save_shopping_list_provider.dart';
+import 'package:shopping_list/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart';
 import 'package:shopping_list/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart';
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
 import 'package:shopping_list/domain/shopping_list/usecase/create_shopping_list.dart';
 import 'package:shopping_list/domain/shopping_list/usecase/find_last_shopping_lists.dart';
+import 'package:shopping_list/domain/shopping_list/usecase/find_shopping_list_by_code.dart';
 import 'package:shopping_list/domain/utils/usecase/generate_random_code.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
@@ -33,14 +35,16 @@ class AppModule extends MainModule {
         Bind((inject) => CheckIfFieldIsEmptyImplementation()),
         Bind((inject) => ParseFormToItemDtoImplementation()),
         Bind((inject) => ParseStringToMonetaryValueImplementation()),
-        Bind((inject) => CreateShoppingList(inject(), inject(), inject())),
-        Bind((inject) => ShoppingListController(inject(), inject())),
+        Bind((inject) => CreateShoppingList(inject(), inject(), inject(), inject())),
+        Bind((inject) => ShoppingListController(inject(), inject(), inject())),
         Bind((inject) => FindShoppingListByCodeProvider(inject())),
         Bind((inject) => FirebaseShoppingListService(inject())),
         Bind((inject) => SaveShoppingListProvider(inject())),
         Bind((inject) => GenerateRandomCode()),
         Bind((inject) => FindLastShoppingLists(inject())),
         Bind((inject) => FindLastShoppingListsProvider(inject())),
+        Bind((inject) => FindShoppingListByCode(inject(), inject())),
+        Bind((inject) => UpdateCurrentShoppingListProvider()),
       ];
 
   @override

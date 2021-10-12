@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
-import 'package:shopping_list/models/list_model.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
 
 class FormSearchList extends StatefulWidget {
   @override
@@ -9,6 +9,7 @@ class FormSearchList extends StatefulWidget {
 
 class _FormSearchListState extends State<FormSearchList> {
   bool _isLoading = false;
+  final shoppingListController = Modular.get<FindShoppingListByCodeController>();
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,8 @@ class _FormSearchListState extends State<FormSearchList> {
     if (_isLoading) {
       return Column(
         children: <Widget>[
-          SizedBox(
-            height: 50.0,
-          ),
-          Center(
-            child: CircularProgressIndicator(),
-          )
+          SizedBox(height: 50.0),
+          Center(child: CircularProgressIndicator()),
         ],
       );
     }
@@ -53,43 +50,32 @@ class _FormSearchListState extends State<FormSearchList> {
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: RaisedButton(
                 color: Color.fromARGB(255, 236, 78, 32),
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState.validate()) {
                     setState(() {
                       _isLoading = true;
                     });
-                    Future<bool> result =
-                        ListModel.checkIfListCodeExists(_searchListCode.text);
-                    result.then((value) async {
-                      if (value) {
-                        ListCode().setCurrentList(_searchListCode.text);
-                        notificateSearchStatus(true);
-                      } else {
-                        notificateSearchStatus(false);
-                      }
-                      setState(() {
-                        _isLoading = false;
-                      });
+                    final result = await shoppingListController.findByCode(_searchListCode.text);
+                    result.isRight() ? notifySearchStatus(true) : notifySearchStatus(false);
+                    setState(() {
+                      _isLoading = false;
                     });
                   }
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Icon(
-                      Icons.search,
-                      color: Colors.orange[50],
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10.0),
-                    ),
+                    Icon(Icons.search, color: Colors.orange[50]),
+                    Padding(padding: EdgeInsets.only(left: 10.0)),
                     Text(
                       'Buscar',
-                      style: TextStyle(color: Colors.orange[50], fontSize: 20.0, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        color: Colors.orange[50],
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10.0),
-                    ),
+                    Padding(padding: EdgeInsets.only(left: 10.0)),
                   ],
                 ),
               ),
@@ -100,22 +86,16 @@ class _FormSearchListState extends State<FormSearchList> {
     );
   }
 
-  void notificateSearchStatus(bool isListFounded) {
+  void notifySearchStatus(bool isListFounded) {
     if (isListFounded) {
       final snackBar = SnackBar(
-        content: Text(
-          'Lista selecionada com sucesso !',
-          textAlign: TextAlign.center,
-        ),
+        content: Text('Lista selecionada com sucesso !', textAlign: TextAlign.center),
         backgroundColor: Colors.green[900],
       );
       Scaffold.of(context).showSnackBar(snackBar);
     } else {
       final snackBar = SnackBar(
-        content: Text(
-          'Código de lista não encontrado !',
-          textAlign: TextAlign.center,
-        ),
+        content: Text('Código de lista não encontrado !', textAlign: TextAlign.center),
         backgroundColor: Color.fromARGB(255, 236, 78, 32),
       );
       Scaffold.of(context).showSnackBar(snackBar);
