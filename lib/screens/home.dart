@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../presenter/shoppping_list/screen/new_list_screen.dart';
-import 'search_list_screen.dart';
+import '../presenter/shoppping_list/screen/search_list_screen.dart';
 import 'shopping_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {

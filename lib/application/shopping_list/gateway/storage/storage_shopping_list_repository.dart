@@ -19,4 +19,10 @@ class StorageShoppingListRepository {
       return Left(NotFoundException());
     }
   }
+
+  Future<List<ShoppingListStorageDto>> findShoppingListsOnHistoric() async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+    final codes = sharedPreferences.getStringList('list_codes') ?? [];
+    return codes.map((it) => ShoppingListStorageDto(it)).toList();
+  }
 }
