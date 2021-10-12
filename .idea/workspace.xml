@@ -31,8 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_tile.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634043064968</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updating list tile to use controller method">
+      <created>1634043766445</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634043766445</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +273,8 @@
     <MESSAGE value="Adjusting onTap function at create new list" />
     <MESSAGE value="Updating find lists from historic" />
     <MESSAGE value="Updating find shopping list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating find shopping list" />
+    <MESSAGE value="Updating list tile to use controller method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating list tile to use controller method" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
