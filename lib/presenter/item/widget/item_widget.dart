@@ -4,7 +4,6 @@ import 'package:shopping_list/application/item/entrypoint/domain/update_item_dto
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
-import 'package:shopping_list/models/list_model.dart';
 import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary_value.dart';
 
 class ItemWidget extends StatefulWidget {
@@ -19,7 +18,8 @@ class ItemWidget extends StatefulWidget {
 class _ItemWidgetState extends State<ItemWidget> {
   String _listCode = ListCode().getCurrentList();
   final parseStringToMonetaryValue = Modular.get<ParseStringToMonetaryValue>();
-  final itemController = Modular.get<UpdateItemStatusController>();
+  final updateItemController = Modular.get<UpdateItemStatusController>();
+  final deleteItemController = Modular.get<DeleteItemController>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class _ItemWidgetState extends State<ItemWidget> {
           status = !status;
           final updateItemDtoRequest =
               UpdateItemDtoRequest(widget.itemList.productId, _listCode, status);
-          itemController.updateItem(updateItemDtoRequest);
+          updateItemController.updateItem(updateItemDtoRequest);
         },
         value: status,
         title: Text(
@@ -80,7 +80,7 @@ class _ItemWidgetState extends State<ItemWidget> {
         ),
       ),
       onDismissed: (direction) {
-        ListModel.removeItem2(widget.itemList, _listCode);
+        deleteItemController.deleteItem(_listCode, widget.itemList.productId);
       },
     );
   }

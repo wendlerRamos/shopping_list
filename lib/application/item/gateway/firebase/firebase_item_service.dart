@@ -26,4 +26,13 @@ class FirebaseItemService {
       "status": updateItemDTO.newStatus,
     });
   }
+
+  void deleteItem(String shoppingListCode, String id) {
+    firestore
+        .collection("shoppingLists")
+        .document(shoppingListCode)
+        .collection('products')
+        .document(id)
+        .delete();
+  }
 }

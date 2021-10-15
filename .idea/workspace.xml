@@ -31,20 +31,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/domain/update_item_dto_request.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/update_item_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/input/update_item_input.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/output/update_item_gateway.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/model/update_item_dto.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/usecase/update_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/delete_item_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/input/delete_item_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/output/delete_item_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/usecase/delete_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/domain/ItemDto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/domain/item_dto.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/provider/save_item_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/save_item_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/item/controller/parse_form_to_item_dto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/controller/parse_form_to_item_dto.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -263,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634044158115</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Updating update item">
+      <created>1634256719028</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634256719028</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -295,7 +297,8 @@
     <MESSAGE value="Updating find shopping list" />
     <MESSAGE value="Updating list tile to use controller method" />
     <MESSAGE value="Updating widget name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating widget name" />
+    <MESSAGE value="Updating update item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating update item" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
