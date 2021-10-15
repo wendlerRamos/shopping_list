@@ -5,6 +5,7 @@ import 'package:shopping_list/app_widget.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/application/item/gateway/firebase/firebase_item_service.dart';
 import 'package:shopping_list/application/item/gateway/provider/save_item_provider.dart';
+import 'package:shopping_list/application/item/gateway/provider/update_item_provider.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
 import 'package:shopping_list/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart';
 import 'package:shopping_list/application/shopping_list/gateway/provider/find_current_shopping_list_provider.dart';
@@ -14,6 +15,7 @@ import 'package:shopping_list/application/shopping_list/gateway/provider/save_sh
 import 'package:shopping_list/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart';
 import 'package:shopping_list/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart';
 import 'package:shopping_list/domain/item/usecase/create_item_usecase.dart';
+import 'package:shopping_list/domain/item/usecase/update_item.dart';
 import 'package:shopping_list/domain/shopping_list/usecase/create_shopping_list.dart';
 import 'package:shopping_list/domain/shopping_list/usecase/find_last_shopping_lists.dart';
 import 'package:shopping_list/domain/shopping_list/usecase/find_shopping_list_by_code.dart';
@@ -31,7 +33,7 @@ class AppModule extends MainModule {
         Bind((inject) => Firestore.instance),
         Bind((inject) => FindCurrentShoppingListProvider(inject())),
         Bind((inject) => StorageShoppingListRepository()),
-        Bind((inject) => ItemControllerImplementation(inject())),
+        Bind((inject) => ItemControllerImplementation(inject(), inject())),
         Bind((inject) => CheckIfFieldIsEmptyImplementation()),
         Bind((inject) => ParseFormToItemDtoImplementation()),
         Bind((inject) => ParseStringToMonetaryValueImplementation()),
@@ -45,6 +47,8 @@ class AppModule extends MainModule {
         Bind((inject) => FindLastShoppingListsProvider(inject())),
         Bind((inject) => FindShoppingListByCode(inject(), inject())),
         Bind((inject) => UpdateCurrentShoppingListProvider()),
+        Bind((inject) => UpdateItem(inject())),
+        Bind((inject) => UpdateItemProvider(inject())),
       ];
 
   @override

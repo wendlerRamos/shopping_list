@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:shopping_list/application/item/entrypoint/domain/update_item_dto_request.dart';
+import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/datas/list_code_store.dart';
 import 'package:shopping_list/models/list_model.dart';
@@ -8,7 +10,7 @@ import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary
 class ItemWidget extends StatefulWidget {
   final ItemList itemList;
 
-  const ItemWidget({Key key, @required this.itemList}) : super(key: key);
+  ItemWidget({Key key, @required this.itemList}) : super(key: key);
 
   @override
   _ItemWidgetState createState() => _ItemWidgetState();
@@ -17,6 +19,7 @@ class ItemWidget extends StatefulWidget {
 class _ItemWidgetState extends State<ItemWidget> {
   String _listCode = ListCode().getCurrentList();
   final parseStringToMonetaryValue = Modular.get<ParseStringToMonetaryValue>();
+  final itemController = Modular.get<UpdateItemStatusController>();
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +42,10 @@ class _ItemWidgetState extends State<ItemWidget> {
         activeColor: getColorByPriority(),
         checkColor: Colors.white,
         onChanged: (c) {
-          (status) ? status = false : status = true;
-          widget.itemList.updateStaus(_listCode);
+          status = !status;
+          final updateItemDtoRequest =
+              UpdateItemDtoRequest(widget.itemList.productId, _listCode, status);
+          itemController.updateItem(updateItemDtoRequest);
         },
         value: status,
         title: Text(

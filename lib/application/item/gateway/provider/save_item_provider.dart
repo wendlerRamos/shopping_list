@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:shopping_list/application/item/gateway/firebase/domain/ItemDto.dart';
+import 'package:shopping_list/application/item/gateway/firebase/domain/item_dto.dart';
 import 'package:shopping_list/application/item/gateway/firebase/firebase_item_service.dart';
 import 'package:shopping_list/domain/exceptions/failure.dart';
 import 'package:shopping_list/domain/item/gateway/output/save_item_gateway.dart';

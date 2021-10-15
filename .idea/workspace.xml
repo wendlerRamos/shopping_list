@@ -31,8 +31,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_tile.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/domain/update_item_dto_request.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/update_item_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/input/update_item_input.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/output/update_item_gateway.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/model/update_item_dto.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/domain/item/usecase/update_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/domain/ItemDto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/domain/item_dto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/provider/save_item_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/save_item_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/controller/parse_form_to_item_dto.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/controller/parse_form_to_item_dto.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +106,7 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\input" />
     </key>
   </component>
-  <component name="RunManager" selected="Flutter Test.should not create shopping list when code already exists">
+  <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="should create a list by code successfully" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
       <option name="testName" value="should create a list by code successfully" />
       <option name="testFile" value="$PROJECT_DIR$/test/domain/shopping_list/usecase/create_shopping_list_test.dart" />
@@ -243,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634043766445</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updating widget name">
+      <created>1634044158115</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634044158115</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +294,8 @@
     <MESSAGE value="Updating find lists from historic" />
     <MESSAGE value="Updating find shopping list" />
     <MESSAGE value="Updating list tile to use controller method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating list tile to use controller method" />
+    <MESSAGE value="Updating widget name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating widget name" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

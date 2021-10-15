@@ -11,7 +11,7 @@ class FormRegister extends StatefulWidget {
 }
 
 class _FormRegisterState extends State<FormRegister> {
-  final itemController = Modular.get<ItemController>();
+  final itemController = Modular.get<CreateItemController>();
   final checkIfFieldIsEmpty = Modular.get<CheckIfFieldIsEmpty>();
   final parseFormToItemDto = Modular.get<ParseFormToItemDto>();
   String _currentState;

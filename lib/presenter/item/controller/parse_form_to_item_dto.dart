@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shopping_list/application/item/gateway/firebase/domain/ItemDto.dart';
+import 'package:shopping_list/application/item/gateway/firebase/domain/item_dto.dart';
 
 abstract class ParseFormToItemDto {
   ItemDto execute(
