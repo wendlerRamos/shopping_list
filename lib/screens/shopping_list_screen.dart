@@ -46,34 +46,9 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
   @override
   Widget build(BuildContext context) {
     _listCode = ListCode().getCurrentList();
-    //  Setting List code card
-    Widget _listCodeCard;
     Widget _formCard;
 
     if (_listCode != null) {
-      _listCodeCard = Card(
-        borderOnForeground: true,
-        child: Padding(
-          padding: EdgeInsets.only(top: 2.0, bottom: 2.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(
-                'Código da Lista: \t \t',
-                style: TextStyle(fontSize: 20.0),
-              ),
-              SelectableText(
-                _listCode,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontStyle: FontStyle.italic,
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-
       _formCard = Card(
         borderOnForeground: true,
         child: Padding(
@@ -87,7 +62,6 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
         ),
       );
     } else {
-      _listCodeCard = Row();
       _formCard = Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -171,11 +145,9 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
             unselectedLabelColor: Colors.black,
             tabs: [
               Tab(
-                //icon: Icon(Icons.list),
                 text: "Ver Lista",
               ),
               Tab(
-                //icon: Icon(Icons.add_circle),
                 text: "Adicionar Item",
               ),
             ],
@@ -189,7 +161,6 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
               child: Column(
                 verticalDirection: VerticalDirection.down,
                 children: <Widget>[
-                  //_listCodeCard,
                   SizedBox(
                     height: 1.0,
                   ),

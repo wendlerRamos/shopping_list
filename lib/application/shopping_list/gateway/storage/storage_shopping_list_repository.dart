@@ -14,9 +14,9 @@ class StorageShoppingListRepository {
       //TODO("Update to injection when change flutter modular version")
       final sharedPreferences = await SharedPreferences.getInstance();
       final currentCode = (sharedPreferences.getString('current_code') ?? null);
-      return (currentCode != null) ? Right(ShoppingListStorageDto(currentCode)) : Left(NotFoundException());
+      return (currentCode != null) ? Right(ShoppingListStorageDto(currentCode)) : Left(NotFoundException("There is not a current shopping list"));
     }catch(Exception){
-      return Left(NotFoundException());
+      return Left(NotFoundException("Failure to search current shopping list"));
     }
   }
 

@@ -15,12 +15,14 @@ class ListCode{
     Future.delayed(Duration(seconds: 1));
   }
 
+  @Deprecated("")
   void getListsFromStorage() async {
     final _storageInstance = await SharedPreferences.getInstance();
     this._historyOfCodes = _storageInstance.getStringList('list_codes') ?? [];
     this._currentCode = (_storageInstance.getString('current_code') ?? null);
   }
 
+  @Deprecated("")
   String getCurrentList(){
     if(this._currentCode == null || this._currentCode == ""){
       if(this._historyOfCodes != null &&  this._historyOfCodes.length > 0){
@@ -33,6 +35,7 @@ class ListCode{
     }
   }
 
+  @Deprecated("")
   void setCurrentList(String newCode) async {
     final _storageInstance = await SharedPreferences.getInstance();
     this._currentCode = newCode;
@@ -42,6 +45,7 @@ class ListCode{
     _storageInstance.setStringList('list_codes', this._historyOfCodes);
   }
 
+  @Deprecated("")
   List<String> getLastShoppingLists(){
     if(_historyOfCodes == null){
       return [];

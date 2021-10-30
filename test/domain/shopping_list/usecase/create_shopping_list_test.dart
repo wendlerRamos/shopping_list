@@ -35,7 +35,7 @@ main() {
     ShoppingList targetShoppingList = MockUtil.createShoppingList(code);
     when(generateRandomCode.execute(5)).thenAnswer((realInvocation) => code);
     when(findShoppingListByCodeGateway.execute(code))
-        .thenAnswer((realInvocation) async => Left(NotFoundException()));
+        .thenAnswer((realInvocation) async => Left(NotFoundException("")));
     when(saveShoppingListGateway.execute(code))
         .thenAnswer((realInvocation) async => Right(targetShoppingList));
     when(updateCurrentShoppingListGateway.execute(targetShoppingList))

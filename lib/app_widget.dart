@@ -12,7 +12,7 @@ class AppWidget extends StatefulWidget {
 class _AppWidgetState extends State<AppWidget> {
   @override
   Widget build(BuildContext context) {
-    ListCode _listCode = ListCode();
+    ListCode();
     return MaterialApp(
       title: 'Shopping List',
       theme: ThemeData(

@@ -31,7 +31,7 @@ main() {
 
   test("should failure when current list does not exists", () async {
     final item = MockUtil.createItem();
-    when(findCurrentRepositoryGateway.execute()).thenAnswer((_) async => Left(NotFoundException()));
+    when(findCurrentRepositoryGateway.execute()).thenAnswer((_) async => Left(NotFoundException("")));
     final result = await createItemUsecase.execute(item);
     expect(result.isLeft(), true);
     expect(result.fold(id, id), isA<NotFoundException>());

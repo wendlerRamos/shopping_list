@@ -21,7 +21,7 @@ main() {
   });
 
   test('should be left when current shopping list does not exists', () async {
-    when(storageRepository.findCurrentShoppingList()).thenAnswer((_) async => Left(NotFoundException()));
+    when(storageRepository.findCurrentShoppingList()).thenAnswer((_) async => Left(NotFoundException("")));
     final result = await target.execute();
     expect(result.fold(id, id), isA<NotFoundException>());
   });

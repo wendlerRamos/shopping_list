@@ -15,7 +15,7 @@ class FindShoppingListByCodeProvider implements FindShoppingListByCodeGateway {
   Future<Either<Exception, ShoppingList>> execute(String code) async{
     try{
       final shoppingList = await firebaseShoppingListService.findByCode(code);
-      if (shoppingList == null) return Left(NotFoundException());
+      if (shoppingList == null) return Left(NotFoundException("There is not a list with code $code"));
       return Right(shoppingList.toDomain());
     }catch(e){
       return Left(FailureToCreateException(e.toString()));
