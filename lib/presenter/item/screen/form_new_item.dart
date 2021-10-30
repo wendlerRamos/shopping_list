@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/presenter/core/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
 
@@ -15,7 +15,7 @@ class _FormRegisterState extends State<FormRegister> {
   final checkIfFieldIsEmpty = Modular.get<CheckIfFieldIsEmpty>();
   final parseFormToItemDto = Modular.get<ParseFormToItemDto>();
   String _currentState;
-  String _listCode = ListCode().getCurrentList();
+  String _listCode = ShoppingListStore().getCurrentList();
   List _option = ["NECESSARIO", "DESEJAVEL"];
 
   List<DropdownMenuItem<String>> getDropDownMenuItems() {

@@ -4,18 +4,20 @@ import 'package:shopping_list/application/shopping_list/gateway/storage/domain/s
 import 'package:shopping_list/domain/exceptions/not_found_exception.dart';
 
 class StorageShoppingListRepository {
-
   //final SharedPreferences sharedPreferences;
 
   //StorageShoppingListRepository(this.sharedPreferences);
 
-  Future<Either<NotFoundException, ShoppingListStorageDto>> findCurrentShoppingList() async{
-    try{
+  Future<Either<NotFoundException, ShoppingListStorageDto>>
+      findCurrentShoppingList() async {
+    try {
       //TODO("Update to injection when change flutter modular version")
       final sharedPreferences = await SharedPreferences.getInstance();
       final currentCode = (sharedPreferences.getString('current_code') ?? null);
-      return (currentCode != null) ? Right(ShoppingListStorageDto(currentCode)) : Left(NotFoundException("There is not a current shopping list"));
-    }catch(Exception){
+      return (currentCode != null)
+          ? Right(ShoppingListStorageDto(currentCode))
+          : Left(NotFoundException("There is not a current shopping list"));
+    } catch (Exception) {
       return Left(NotFoundException("Failure to search current shopping list"));
     }
   }
@@ -24,5 +26,19 @@ class StorageShoppingListRepository {
     final sharedPreferences = await SharedPreferences.getInstance();
     final codes = sharedPreferences.getStringList('list_codes') ?? [];
     return codes.map((it) => ShoppingListStorageDto(it)).toList();
+  }
+
+  Future<void> setCurrentCode(String newCode) async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setString('current_code', newCode);
+  }
+
+  Future<void> addNewCodeToHistoric(String newCode) async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+    List<String> currentHistoricalOfListCodes =
+        sharedPreferences.getStringList('list_codes') ?? [];
+    currentHistoricalOfListCodes.removeWhere((lisCode) => lisCode == newCode);
+    currentHistoricalOfListCodes.add(newCode);
+    sharedPreferences.setStringList('list_codes', currentHistoricalOfListCodes);
   }
 }

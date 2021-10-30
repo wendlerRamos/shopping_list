@@ -21,4 +21,6 @@ class FirebaseShoppingListService {
     return (list.data == null) ? null : ShoppingListFirestoreResponse(code);
   }
 
+
+
 }

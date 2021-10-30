@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/presenter/core/shopping_list_store.dart';
 
 import '../presenter/item/widget/item_widget.dart';
 
@@ -25,7 +25,7 @@ class _ItemsListState extends State<ItemsList> {
 
   @override
   Widget build(BuildContext context) {
-    String _listCode = ListCode().getCurrentList();
+    String _listCode = ShoppingListStore().getCurrentList();
     final cardContent = Expanded(
       child: Card(
         margin: EdgeInsets.all(4.0),

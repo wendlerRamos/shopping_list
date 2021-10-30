@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:random_string/random_string.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
 
 class ListModel extends Model {
   List<ItemList> products = [];
@@ -14,6 +12,7 @@ class ListModel extends Model {
     _loadItens();
   }
 
+  @Deprecated("")
   static ListModel of(BuildContext context) =>
       ScopedModel.of<ListModel>(context);
 
@@ -30,6 +29,7 @@ class ListModel extends Model {
     notifyListeners();
   }
 
+  @Deprecated("")
   void removeItem(ItemList itemList) {
     Firestore.instance
         .collection("shoppingLists")
@@ -41,6 +41,7 @@ class ListModel extends Model {
     notifyListeners();
   }
 
+  @Deprecated("")
   static void removeItem2(ItemList itemList, listCode) async {
     Firestore.instance
         .collection("shoppingLists")
@@ -50,6 +51,7 @@ class ListModel extends Model {
         .delete();
   }
 
+  @Deprecated("")
   void setProductStatus(ItemList itemList) {
     if (itemList.status) {
       itemList.status = false;
@@ -65,6 +67,7 @@ class ListModel extends Model {
     notifyListeners();
   }
 
+  @Deprecated("")
   void _loadItens() async {
     isLoading = true;
     QuerySnapshot query = await Firestore.instance
@@ -89,6 +92,7 @@ class ListModel extends Model {
     notifyListeners();
   }
 
+  @Deprecated("")
   static Future<bool> checkIfListCodeExists(String searchCode) async {
     bool exist;
     try {
@@ -109,6 +113,7 @@ class ListModel extends Model {
     }
   }
 
+  @Deprecated("")
   static Future<int> checkIfListCodeNotExists(String searchCode) async {
     int exist;
     try {
@@ -129,36 +134,4 @@ class ListModel extends Model {
     }
   }
 
-  static Future<String> createList() async {
-    String newCodeList = '';
-    bool isValidCode = false;
-    int _status;
-    int count = 0;
-    do {
-      count = count + 1;
-      newCodeList = randomAlphaNumeric(5);
-      _status = await checkIfListCodeNotExists(newCodeList);
-      if (_status == 1) {
-        isValidCode = true;
-      } else if (_status == 0) {
-        isValidCode = false;
-      } else {
-        print('Erro de conexão');
-        return null;
-      }
-    } while (isValidCode && count < 5);
-    if (count < 5) {
-      await Firestore.instance
-          .collection('shoppingLists')
-          .document(newCodeList)
-          .setData({
-        'created_at': new DateTime.now(),
-      }).then((_) {
-        ListCode().setCurrentList(newCodeList);
-      });
-    } else {
-      return null;
-    }
-    return newCodeList;
-  }
 }

@@ -49,7 +49,7 @@ class AppModule extends MainModule {
         Bind((inject) => FindLastShoppingLists(inject())),
         Bind((inject) => FindLastShoppingListsProvider(inject())),
         Bind((inject) => FindShoppingListByCode(inject(), inject())),
-        Bind((inject) => UpdateCurrentShoppingListProvider()),
+        Bind((inject) => UpdateCurrentShoppingListProvider(inject())),
         Bind((inject) => UpdateItem(inject())),
         Bind((inject) => UpdateItemProvider(inject())),
         Bind((inject) => DeleteItem(inject())),

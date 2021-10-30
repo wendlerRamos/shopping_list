@@ -31,16 +31,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/delete_item_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/input/delete_item_input.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/gateway/output/delete_item_gateway.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/domain/item/usecase/delete_item.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/datas/list_code_store.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/datas/list_code_store.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/list_model.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +70,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1p4NewnMItbLEwEsjBha3Vt9nNC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -82,9 +83,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/domain/shopping_list" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -133,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter Test.should not create shopping list when code already exists" />
-        <item itemvalue="Flutter Test.should create a list by code successfully" />
+        <item itemvalue="Flutter Test.tests in find_current_shopping_list_provider_test.dart" />
         <item itemvalue="Flutter Test.should return empty list when gateway fails" />
         <item itemvalue="Flutter Test.should return a list of shopping lists" />
-        <item itemvalue="Flutter Test.tests in find_current_shopping_list_provider_test.dart" />
+        <item itemvalue="Flutter Test.should not create shopping list when code already exists" />
+        <item itemvalue="Flutter Test.should create a list by code successfully" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +266,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634256719028</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Delete item usecase">
+      <created>1634260577689</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634260577689</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Find current shopping list">
+      <created>1635625382695</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1635625382695</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -298,7 +313,9 @@
     <MESSAGE value="Updating list tile to use controller method" />
     <MESSAGE value="Updating widget name" />
     <MESSAGE value="Updating update item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating update item" />
+    <MESSAGE value="Delete item usecase" />
+    <MESSAGE value="Find current shopping list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Find current shopping list" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

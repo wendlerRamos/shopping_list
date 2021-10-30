@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/domain/update_item_dto_request.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/presenter/core/shopping_list_store.dart';
 import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary_value.dart';
 
 class ItemWidget extends StatefulWidget {
@@ -16,7 +16,7 @@ class ItemWidget extends StatefulWidget {
 }
 
 class _ItemWidgetState extends State<ItemWidget> {
-  String _listCode = ListCode().getCurrentList();
+  String _listCode = ShoppingListStore().getCurrentList();
   final parseStringToMonetaryValue = Modular.get<ParseStringToMonetaryValue>();
   final updateItemController = Modular.get<UpdateItemStatusController>();
   final deleteItemController = Modular.get<DeleteItemController>();

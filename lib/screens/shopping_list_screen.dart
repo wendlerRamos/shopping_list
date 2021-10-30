@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/list_code_store.dart';
+import 'package:shopping_list/presenter/core/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/screen/form_new_item.dart';
 import 'package:shopping_list/widgets/items_list.dart';
 
@@ -45,7 +45,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    _listCode = ListCode().getCurrentList();
+    _listCode = ShoppingListStore().getCurrentList();
     Widget _formCard;
 
     if (_listCode != null) {
