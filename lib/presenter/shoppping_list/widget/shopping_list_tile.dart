@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 class ShoppingListTile extends StatelessWidget {
   final shoppingListController = Modular.get<FindShoppingListByCodeController>();
@@ -15,7 +16,7 @@ class ShoppingListTile extends StatelessWidget {
     return Container(
       child: RaisedButton(
         padding: EdgeInsets.only(top: 8.0, bottom: 8.0, right: 10.0, left: 10.0),
-        color: (_index % 2) == 0 ? Colors.white : Color.fromARGB(255, 0, 38, 66),
+        color: (_index % 2) == 0 ? Colors.white : ColorManager.getBlueColor(),
         onPressed: () async {
           final result = await shoppingListController.findByCode(_listName);
           (result.isRight())
@@ -66,11 +67,11 @@ class ShoppingListTile extends StatelessWidget {
           'Código de lista não encontrado !',
           textAlign: TextAlign.center,
         ),
-        backgroundColor: Color.fromARGB(255, 236, 78, 32),
+        backgroundColor:ColorManager.getOrangeColor(),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     }
   }
 
-  Color setColorByIndex() => (_index % 2) != 0 ? Colors.white : Color.fromARGB(255, 0, 38, 66);
+  Color setColorByIndex() => (_index % 2) != 0 ? Colors.white : ColorManager.getBlueColor();
 }

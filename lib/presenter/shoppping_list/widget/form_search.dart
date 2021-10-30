@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 class FormSearchList extends StatefulWidget {
   @override
@@ -49,7 +50,7 @@ class _FormSearchListState extends State<FormSearchList> {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: RaisedButton(
-                color: Color.fromARGB(255, 236, 78, 32),
+                color: ColorManager.getOrangeColor(),
                 onPressed: () async {
                   if (_formKey.currentState.validate()) {
                     setState(() {
@@ -96,7 +97,7 @@ class _FormSearchListState extends State<FormSearchList> {
     } else {
       final snackBar = SnackBar(
         content: Text('Código de lista não encontrado !', textAlign: TextAlign.center),
-        backgroundColor: Color.fromARGB(255, 236, 78, 32),
+        backgroundColor: ColorManager.getOrangeColor(),
       );
       Scaffold.of(context).showSnackBar(snackBar);
     }

@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 import '../presenter/item/widget/item_widget.dart';
 
@@ -52,13 +53,13 @@ class _ItemsListState extends State<ItemsList> {
                       Text(
                         "Nenhuma Lista Selecionada",
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0),
+                        style: TextStyle(color: ColorManager.getBlueColor(), fontSize: 30.0),
                       ),
                       Text(
                         "Busque uma lista existente ou crie uma nova",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Color.fromARGB(255, 0, 38, 66),
+                            color: ColorManager.getBlueColor(),
                             fontSize: 15.0,
                             fontStyle: FontStyle.italic),
                       ),
@@ -83,7 +84,7 @@ class _ItemsListState extends State<ItemsList> {
                       ),
                       Text(
                         "Ops... Parece que algo deu errado!",
-                        style: TextStyle(color: Color.fromARGB(255, 0, 38, 66), fontSize: 30.0),
+                        style: TextStyle(color: ColorManager.getBlueColor(), fontSize: 30.0),
                       ),
                     ],
                   ),
@@ -96,12 +97,12 @@ class _ItemsListState extends State<ItemsList> {
                       Icon(
                         Icons.remove_shopping_cart,
                         size: 100.0,
-                        color: Color.fromARGB(255, 0, 38, 66),
+                        color: ColorManager.getBlueColor(),
                       ),
                       Text(
                         "A lista está vazia!",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 0, 38, 66),
+                          color: ColorManager.getBlueColor(),
                           fontSize: 30.0,
                         ),
                       ),

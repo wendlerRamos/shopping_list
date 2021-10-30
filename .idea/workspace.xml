@@ -31,10 +31,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/presenter/core/widget/BottomBarItems.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/presenter/util/controller/ColorManager.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/new_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/new_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/form_search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/form_search.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +102,11 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core\controller" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\widget" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\widget" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\screen" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -124,18 +134,18 @@
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="tests in find_current_shopping_list_provider_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
-      <option name="testFile" value="$PROJECT_DIR$/test/application/shopping_list/gateway/provider/find_current_shopping_list_provider_test.dart" />
+    <configuration name="tests in create_shopping_list_test.dart" type="FlutterTestConfigType" factoryName="Flutter Test" temporary="true" nameIsGenerated="true">
+      <option name="testFile" value="$PROJECT_DIR$/test/domain/shopping_list/usecase/create_shopping_list_test.dart" />
       <option name="useRegexp" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter Test.tests in find_current_shopping_list_provider_test.dart" />
         <item itemvalue="Flutter Test.should return empty list when gateway fails" />
         <item itemvalue="Flutter Test.should return a list of shopping lists" />
         <item itemvalue="Flutter Test.should not create shopping list when code already exists" />
         <item itemvalue="Flutter Test.should create a list by code successfully" />
+        <item itemvalue="Flutter Test.tests in create_shopping_list_test.dart" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +294,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635628912025</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Delete useless class">
+      <created>1635630381558</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1635630381558</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Moving shopping_list_store">
+      <created>1635630703041</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1635630703041</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,10 +344,19 @@
     <MESSAGE value="Delete item usecase" />
     <MESSAGE value="Find current shopping list" />
     <MESSAGE value="Refactoring shopping list store" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring shopping list store" />
+    <MESSAGE value="Delete useless class" />
+    <MESSAGE value="Moving shopping_list_store" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving shopping_list_store" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/domain/item/usecase/create_item_usecase.dart</url>
+          <line>18</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint suspend="THREAD" type="dart-exception" />
       </default-breakpoints>

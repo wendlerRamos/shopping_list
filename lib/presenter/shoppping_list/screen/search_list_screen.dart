@@ -4,6 +4,7 @@ import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list
 import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
 import 'package:shopping_list/presenter/shoppping_list/widget/form_search.dart';
 import 'package:shopping_list/presenter/shoppping_list/widget/shopping_list_tile.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 class SearchListScreen extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 25.0,
-                      color: Color.fromARGB(255, 0, 38, 66),
+                      color: ColorManager.getBlueColor(),
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -44,7 +45,7 @@ class _SearchListScreenState extends State<SearchListScreen> {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25.0,
-                color: Color.fromARGB(255, 0, 38, 66),
+                color: ColorManager.getBlueColor(),
               ),
               textAlign: TextAlign.center,
             ),
@@ -94,7 +95,7 @@ class NoneListOnHistoric extends StatelessWidget {
         children: <Widget>[
           Icon(
             Icons.format_list_bulleted,
-            color: Color.fromARGB(255, 0, 38, 66),
+            color: ColorManager.getBlueColor(),
             size: 50.0,
           ),
           Text(
@@ -102,7 +103,7 @@ class NoneListOnHistoric extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20.0,
-              color: Color.fromARGB(255, 0, 38, 66),
+              color: ColorManager.getBlueColor(),
             ),
           ),
         ],

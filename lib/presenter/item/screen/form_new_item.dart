@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
 
 class FormRegister extends StatefulWidget {
@@ -89,7 +90,7 @@ class _FormRegisterState extends State<FormRegister> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     RaisedButton(
-                      color: Color.fromARGB(255, 236, 78, 32),
+                      color: ColorManager.getOrangeColor(),
                       child: Text("ADICIONAR"),
                       textColor: Colors.white,
                       onPressed: () async {
@@ -123,7 +124,7 @@ class _FormRegisterState extends State<FormRegister> {
   void displaySuccessSnackBar(){
     final snackBar = SnackBar(
       content: Text('Inserido com sucesso !'),
-      backgroundColor: Color.fromARGB(255, 0, 38, 66),
+      backgroundColor: ColorManager.getBlueColor(),
     );
     Scaffold.of(context).showSnackBar(snackBar);
   }

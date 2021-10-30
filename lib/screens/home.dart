@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_list/presenter/core/widget/BottomBarItems.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 import '../presenter/shoppping_list/screen/new_list_screen.dart';
 import '../presenter/shoppping_list/screen/search_list_screen.dart';
@@ -12,70 +14,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int bottomSelectedIndex = 1;
 
-  List<BottomNavigationBarItem> buildBottomNavBarItems() {
-    return [
-      BottomNavigationBarItem(
-        icon: Icon(
-          Icons.add_circle,
-        ),
-        label: 'Nova Lista',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(
-          Icons.home,
-        ),
-        label: 'Lista de Compras',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(
-          Icons.search,
-        ),
-        label: 'Buscar Lista',
-      ),
-    ];
-  }
-
   PageController pageController = PageController(
     initialPage: 1,
     keepPage: false,
   );
-
-  //Used to integrate page view and bottom navigation
-  void pageChanged(int index) {
-    setState(() {
-      bottomSelectedIndex = index;
-      pageController.animateToPage(
-        index,
-        duration: Duration(
-          milliseconds: 300,
-        ),
-        curve: Curves.easeInOutCubic,
-      );
-    });
-  }
-
-  //Used to integrate bottom navigate click with page view
-  void bottomTapped(int index) {
-    setState(() {
-      bottomSelectedIndex = index;
-      pageController.jumpToPage(index);
-    });
-  }
-
-  Widget buildPageView() {
-    return PageView(
-      physics:NeverScrollableScrollPhysics(),
-      controller: pageController,
-      onPageChanged: (index) {
-        pageChanged(index);
-      },
-      children: <Widget>[
-        NewListScreen(),
-        ShoppingListScreen(),
-        SearchListScreen(),
-      ],
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,11 +46,46 @@ class _HomeScreenState extends State<HomeScreen> {
           onTap: (index) {
             bottomTapped(index);
           },
-          selectedItemColor: Color.fromARGB(255, 236, 78, 32),
-          unselectedItemColor: Color.fromARGB(255, 0, 38, 66),
-          items: buildBottomNavBarItems(),
+          selectedItemColor: ColorManager.getOrangeColor(),
+          unselectedItemColor:ColorManager.getBlueColor(),
+          items: BottomBarItems.getItems(),
         ),
       ),
     );
+  }
+
+  void bottomTapped(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.jumpToPage(index);
+    });
+  }
+
+  Widget buildPageView() {
+    return PageView(
+      physics: NeverScrollableScrollPhysics(),
+      controller: pageController,
+      onPageChanged: (index) {
+        pageChanged(index);
+      },
+      children: <Widget>[
+        NewListScreen(),
+        ShoppingListScreen(),
+        SearchListScreen(),
+      ],
+    );
+  }
+
+  void pageChanged(int index) {
+    setState(() {
+      bottomSelectedIndex = index;
+      pageController.animateToPage(
+        index,
+        duration: Duration(
+          milliseconds: 300,
+        ),
+        curve: Curves.easeInOutCubic,
+      );
+    });
   }
 }

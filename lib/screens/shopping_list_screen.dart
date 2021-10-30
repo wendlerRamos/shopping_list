@@ -4,6 +4,7 @@ import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/screen/form_new_item.dart';
+import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 import 'package:shopping_list/widgets/items_list.dart';
 
 class ShoppingListScreen extends StatefulWidget {
@@ -75,14 +76,14 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
               "Nenhuma Lista Selecionada",
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Color.fromARGB(255, 0, 38, 66),
+                  color: ColorManager.getBlueColor(),
                   fontSize: 30.0),
             ),
             Text(
               "Busque uma lista existente ou crie uma nova",
               textAlign: TextAlign.center,
               style: TextStyle(
-                  color: Color.fromARGB(255, 0, 38, 66),
+                  color: ColorManager.getBlueColor(),
                   fontSize: 15.0,
                   fontStyle: FontStyle.italic),
             ),
