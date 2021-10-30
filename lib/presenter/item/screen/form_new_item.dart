@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
-import 'package:shopping_list/presenter/core/shopping_list_store.dart';
+import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
 

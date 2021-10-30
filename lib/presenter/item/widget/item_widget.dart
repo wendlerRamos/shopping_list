@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/domain/update_item_dto_request.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/presenter/core/shopping_list_store.dart';
+import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary_value.dart';
 
 class ItemWidget extends StatefulWidget {

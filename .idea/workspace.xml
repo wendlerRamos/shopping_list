@@ -33,12 +33,8 @@
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/firebase/firebase_shopping_list_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/provider/update_current_shopping_list_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/shopping_list/gateway/storage/storage_shopping_list_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/datas/list_code_store.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/datas/list_code_store.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/list_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/list_model.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +79,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/domain/shopping_list" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -95,11 +92,11 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\widget" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\widget" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\screen" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\domain\item\gateway\input" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -280,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635625382695</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Refactoring shopping list store">
+      <created>1635628912025</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1635628912025</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,7 +319,15 @@
     <MESSAGE value="Updating update item" />
     <MESSAGE value="Delete item usecase" />
     <MESSAGE value="Find current shopping list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Find current shopping list" />
+    <MESSAGE value="Refactoring shopping list store" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring shopping list store" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint suspend="THREAD" type="dart-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="../../../../Documents/Projetos/shopping_list/coverage/lcov.info" NAME="tests in app_module_test.dart Coverage Results" MODIFIED="1630793287052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="FlutterCoverageRunner" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

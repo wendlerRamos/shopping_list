@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/presenter/core/shopping_list_store.dart';
+import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 
 import '../presenter/item/widget/item_widget.dart';
 
