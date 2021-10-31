@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
-import 'package:shopping_list/presenter/core/widget/intro_splash_screen.dart';
+import 'package:shopping_list/presenter/core/screen/intro_splash_screen.dart';
 import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 import 'package:shopping_list/presenter/core/screen/home.dart';
 import 'package:splashscreen/splashscreen.dart';
