@@ -4,7 +4,7 @@ import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 import '../../shoppping_list/screen/new_list_screen.dart';
 import '../../shoppping_list/screen/search_list_screen.dart';
-import '../../../screens/shopping_list_screen.dart';
+import '../../shoppping_list/screen/shopping_list_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
