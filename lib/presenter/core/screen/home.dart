@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bottomTapped(index);
           },
           selectedItemColor: ColorManager.getOrangeColor(),
-          unselectedItemColor:ColorManager.getBlueColor(),
+          unselectedItemColor: ColorManager.getBlueColor(),
           items: BottomBarItems.getItems(),
         ),
       ),
