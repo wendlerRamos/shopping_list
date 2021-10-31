@@ -31,15 +31,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/empty_code_list_form_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/form_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_screen_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/shopping_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/shopping_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_screen_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_screen_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -318,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635634638518</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Updating connectivity state indicator">
+      <created>1635643856300</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1635643856300</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,7 +360,8 @@
     <MESSAGE value="Moving shopping_list_store" />
     <MESSAGE value="Creating color manager" />
     <MESSAGE value="Moving home screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving home screen" />
+    <MESSAGE value="Updating connectivity state indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating connectivity state indicator" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
