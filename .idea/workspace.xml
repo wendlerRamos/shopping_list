@@ -31,23 +31,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_code_state_option.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_data_state_option.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/error_state_option.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/list_items_state_option.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/state_options.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/waiting_data_state_option.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/find_stream_of_items_by_shopping_list_code_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/new_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/new_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/search_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/screen/shopping_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/shopping_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/empty_code_list_form_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/empty_code_banner_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/form_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/form_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/form_search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/form_search.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_screen_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_screen_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shoppping_list/widget/shopping_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_code_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_code_state_option.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635643856300</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Creating strategy to list items of shopping list (not finished)">
+      <created>1635648523147</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1635648523147</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,7 +347,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Some layout adjustments" />
     <MESSAGE value="Removing floating button" />
     <MESSAGE value="Updating splash screen colors" />
     <MESSAGE value="Formatting" />
@@ -374,17 +371,11 @@
     <MESSAGE value="Creating color manager" />
     <MESSAGE value="Moving home screen" />
     <MESSAGE value="Updating connectivity state indicator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating connectivity state indicator" />
+    <MESSAGE value="Creating strategy to list items of shopping list (not finished)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating strategy to list items of shopping list (not finished)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/domain/item/usecase/create_item_usecase.dart</url>
-          <line>18</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint suspend="THREAD" type="dart-exception" />
       </default-breakpoints>

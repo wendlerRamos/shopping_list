@@ -6,6 +6,7 @@ import 'package:shopping_list/app_widget.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/application/item/gateway/firebase/firebase_item_service.dart';
 import 'package:shopping_list/application/item/gateway/provider/delete_item_provider.dart';
+import 'package:shopping_list/application/item/gateway/provider/find_stream_of_items_by_shopping_list_code_provider.dart';
 import 'package:shopping_list/application/item/gateway/provider/save_item_provider.dart';
 import 'package:shopping_list/application/item/gateway/provider/update_item_provider.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
@@ -37,7 +38,7 @@ class AppModule extends MainModule {
         Bind((inject) => Firestore.instance),
         Bind((inject) => FindCurrentShoppingListProvider(inject())),
         Bind((inject) => StorageShoppingListRepository()),
-        Bind((inject) => ItemControllerImplementation(inject(), inject(), inject())),
+        Bind((inject) => ItemControllerImplementation(inject(), inject(), inject(), inject())),
         Bind((inject) => CheckIfFieldIsEmptyImplementation()),
         Bind((inject) => ParseFormToItemDtoImplementation()),
         Bind((inject) => ParseStringToMonetaryValueImplementation()),
@@ -56,6 +57,7 @@ class AppModule extends MainModule {
         Bind((inject) => DeleteItem(inject())),
         Bind((inject) => DeleteItemProvider(inject())),
         Bind((inject) => FindCurrentShoppingList(inject())),
+        Bind((inject) => FindItemsByShoppingListCodeProvider(inject())),
       ];
 
   @override

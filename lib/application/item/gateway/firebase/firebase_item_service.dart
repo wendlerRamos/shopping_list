@@ -8,7 +8,6 @@ class FirebaseItemService {
   FirebaseItemService(this.firestore);
 
   void saveItemToList(ItemDto itemDto, String listCode) async {
-    print("saving item $itemDto to list $listCode");
     firestore
         .collection("shoppingLists")
         .document(listCode)
@@ -34,5 +33,15 @@ class FirebaseItemService {
         .collection('products')
         .document(id)
         .delete();
+  }
+
+  Stream<QuerySnapshot> findItemsByShoppingList(String shoppingListCode) {
+    return firestore
+        .collection('shoppingLists')
+        .document(shoppingListCode)
+        .collection('products')
+        .orderBy('status', descending: false)
+        .orderBy('name', descending: false)
+        .snapshots();
   }
 }
