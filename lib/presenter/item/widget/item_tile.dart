@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/domain/update_item_dto_request.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
-import 'package:shopping_list/datas/item_data.dart';
+import 'package:shopping_list/presenter/item/model/item_data.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 import 'package:shopping_list/presenter/util/controller/parse_string_to_monetary_value.dart';
 
-class ItemWidget extends StatefulWidget {
+class ItemTile extends StatefulWidget {
   final ItemList itemList;
 
-  ItemWidget({Key key, @required this.itemList}) : super(key: key);
+  ItemTile({Key key, @required this.itemList}) : super(key: key);
 
   @override
-  _ItemWidgetState createState() => _ItemWidgetState();
+  _ItemTileState createState() => _ItemTileState();
 }
 
-class _ItemWidgetState extends State<ItemWidget> {
+class _ItemTileState extends State<ItemTile> {
   String _listCode = ShoppingListStore().getCurrentList();
   final parseStringToMonetaryValue = Modular.get<ParseStringToMonetaryValue>();
   final updateItemController = Modular.get<UpdateItemStatusController>();

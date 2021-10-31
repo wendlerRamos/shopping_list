@@ -4,7 +4,7 @@ import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart
 import 'package:shopping_list/presenter/shopping_list/widget/empty_code_banner_widget.dart';
 import 'package:shopping_list/presenter/shopping_list/widget/form_card.dart';
 import 'package:shopping_list/presenter/shopping_list/widget/shopping_list_screen_header.dart';
-import 'package:shopping_list/widgets/items_list.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/items_list.dart';
 
 class ShoppingListScreen extends StatefulWidget {
   @override

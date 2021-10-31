@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/item_data.dart';
-import 'package:shopping_list/presenter/item/widget/item_widget.dart';
+import 'package:shopping_list/presenter/item/model/item_data.dart';
+import 'package:shopping_list/presenter/item/widget/item_tile.dart';
 import 'package:shopping_list/presenter/shopping_list/controller/state_options.dart';
 
 class ListItemsStateOption extends StateOptions {
@@ -17,8 +17,7 @@ class ListItemsStateOption extends StateOptions {
         scrollDirection: Axis.vertical,
         children: snapshot.documents.map((DocumentSnapshot document) {
           ItemList _itemList = ItemList.fromDocument(document);
-          //print(_itemList);
-          return ItemWidget(
+          return ItemTile(
             itemList: _itemList,
           );
         }).toList(),

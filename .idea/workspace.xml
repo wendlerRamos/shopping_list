@@ -31,15 +31,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/application/item/gateway/provider/find_stream_of_items_by_shopping_list_code_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_module.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/entrypoint/item_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application/item/gateway/firebase/firebase_item_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_code_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_code_state_option.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/widgets/items_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/items_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/datas/item_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/model/item_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/list_items_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/list_items_state_option.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_screen_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_screen_header.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,11 +94,11 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\model" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core\controller" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\widget" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -331,7 +328,21 @@
       <option name="project" value="LOCAL" />
       <updated>1635648523147</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Creating  provider to find items from shopping list">
+      <created>1635690610700</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1635690610700</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Fix null list code bug">
+      <created>1635691634694</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1635691634694</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -347,8 +358,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removing floating button" />
-    <MESSAGE value="Updating splash screen colors" />
     <MESSAGE value="Formatting" />
     <MESSAGE value="Updating layout" />
     <MESSAGE value="Creating item and some configuration" />
@@ -372,7 +381,9 @@
     <MESSAGE value="Moving home screen" />
     <MESSAGE value="Updating connectivity state indicator" />
     <MESSAGE value="Creating strategy to list items of shopping list (not finished)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating strategy to list items of shopping list (not finished)" />
+    <MESSAGE value="Creating  provider to find items from shopping list" />
+    <MESSAGE value="Fix null list code bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix null list code bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

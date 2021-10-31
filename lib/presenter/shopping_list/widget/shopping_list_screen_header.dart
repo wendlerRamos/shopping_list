@@ -25,13 +25,46 @@ class _ShoppingListScreenHeaderState extends State<ShoppingListScreenHeader> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
+          Expanded(
+            child: buildListCodeIndicator(),
+            flex: 3,
+          ),
+          Expanded(
+            child: StreamBuilder(
+              initialData: currentConnection,
+              stream: Connectivity().onConnectivityChanged,
+              builder: (context, AsyncSnapshot<ConnectivityResult> connection) {
+                if (connection.hasData) {
+                  currentConnection = connection.data;
+                }
+                return buildConnectionIndicatorWidget();
+              },
+            ),
+            flex: 1,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildListCodeIndicator() {
+    return (widget.listCode == null)
+        ? Text(
+            'Nenhuma Lista Selecionada',
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                color: Colors.grey,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.normal),
+          )
+        : Row(
             children: [
               Text(
                 'Código da Lista: ',
@@ -49,19 +82,7 @@ class _ShoppingListScreenHeaderState extends State<ShoppingListScreenHeader> {
                 ),
               ),
             ],
-          ),
-          StreamBuilder(
-              initialData: currentConnection,
-              stream: Connectivity().onConnectivityChanged,
-              builder: (context, AsyncSnapshot<ConnectivityResult> connection) {
-                if (connection.hasData) {
-                  currentConnection = connection.data;
-                }
-                return buildConnectionIndicatorWidget();
-              }),
-        ],
-      ),
-    );
+          );
   }
 
   Row buildConnectionIndicatorWidget() {
