@@ -32,7 +32,7 @@ class ListItemsStateOption extends StateOptions {
 
   @override
   bool verify(AsyncSnapshot<QuerySnapshot> snapshot, String listCode) =>
-      listCode.isNotEmpty &&
+      listCode != null &&
       snapshot.hasData &&
       !snapshot.hasError &&
       snapshot.data.documents.isNotEmpty;

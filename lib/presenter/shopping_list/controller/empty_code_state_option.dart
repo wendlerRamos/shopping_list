@@ -9,5 +9,5 @@ class EmptyCodeStateOption extends StateOptions {
 
   @override
   bool verify(AsyncSnapshot<QuerySnapshot> snapshot, String listCode) =>
-      listCode.isEmpty;
+      listCode == null;
 }

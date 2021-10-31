@@ -30,5 +30,5 @@ class ErrorStateOption extends StateOptions {
 
   @override
   bool verify(AsyncSnapshot<QuerySnapshot> snapshot, String listCode) =>
-      listCode.isNotEmpty && snapshot.hasData && snapshot.hasError;
+      listCode != null && snapshot.hasData && snapshot.hasError;
 }

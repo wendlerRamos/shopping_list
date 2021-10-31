@@ -30,5 +30,5 @@ class EmptyDataStateOption extends StateOptions {
 
   @override
   bool verify(AsyncSnapshot<QuerySnapshot> snapshot, String listCode) =>
-      listCode.isNotEmpty && snapshot.hasData && !snapshot.hasError && snapshot.data.documents.isEmpty;
+      listCode != null && snapshot.hasData && !snapshot.hasError && snapshot.data.documents.isEmpty;
 }
