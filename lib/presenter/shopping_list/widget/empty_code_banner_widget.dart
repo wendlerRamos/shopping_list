@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
+import 'package:shopping_list/presenter/util/controller/color_manager.dart';
 
 class EmptyCodeBannerWidget extends StatelessWidget {
   const EmptyCodeBannerWidget({Key key}) : super(key: key);

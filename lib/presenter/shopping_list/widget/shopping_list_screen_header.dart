@@ -1,6 +1,6 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
+import 'package:shopping_list/presenter/util/controller/color_manager.dart';
 
 class ShoppingListScreenHeader extends StatefulWidget {
   final String listCode;

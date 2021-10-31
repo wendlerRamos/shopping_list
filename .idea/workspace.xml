@@ -31,12 +31,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fec41d52-5ae5-4e8b-a1bc-990c20ee90e9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/icons/app-blue-logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/datas/item_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/model/item_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_tile.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/list_items_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/list_items_state_option.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-50x50@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-57x57@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-72x72@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/core/screen/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/core/screen/intro_splash_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/core/screen/intro_splash_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/screen/form_new_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/item/widget/item_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/item/widget/item_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_data_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/empty_data_state_option.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/error_state_option.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/controller/error_state_option.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/new_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/new_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/search_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/screen/search_list_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/empty_code_banner_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/empty_code_banner_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/form_search.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/form_search.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_screen_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_screen_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/shopping_list/widget/shopping_list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/presenter/util/controller/ColorManager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/presenter/util/controller/color_manager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,11 +133,11 @@
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\android" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\icons" />
+      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shopping_list\widget" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\item\model" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core\screen" />
       <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\shoppping_list\screen" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core\controller" />
-      <recent name="C:\Users\wendl\Documents\Projetos\shopping_list\lib\presenter\core" />
     </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
@@ -342,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635691634694</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Adjusting shopping list header">
+      <created>1635712204433</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1635712204433</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -358,7 +404,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Formatting" />
     <MESSAGE value="Updating layout" />
     <MESSAGE value="Creating item and some configuration" />
     <MESSAGE value="Removing unused code" />
@@ -383,7 +428,8 @@
     <MESSAGE value="Creating strategy to list items of shopping list (not finished)" />
     <MESSAGE value="Creating  provider to find items from shopping list" />
     <MESSAGE value="Fix null list code bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix null list code bug" />
+    <MESSAGE value="Adjusting shopping list header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusting shopping list header" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

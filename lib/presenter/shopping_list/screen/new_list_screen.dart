@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
 import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
+import 'package:shopping_list/presenter/util/controller/color_manager.dart';
 
 class NewListScreen extends StatefulWidget {
   @override

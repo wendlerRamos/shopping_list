@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/item/entrypoint/item_controller.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
 import 'package:shopping_list/presenter/item/controller/parse_form_to_item_dto.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
+import 'package:shopping_list/presenter/util/controller/color_manager.dart';
 import 'package:shopping_list/presenter/util/controller/check_if_field_is_empty.dart';
 
 class FormRegister extends StatefulWidget {

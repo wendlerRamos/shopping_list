@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/presenter/core/screen/home.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
+import 'package:shopping_list/presenter/util/controller/color_manager.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 class IntroSplashScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class IntroSplashScreen extends StatelessWidget {
           loadingText: Text(
             'SHOPPING LIST',
             style: TextStyle(
-              color: ColorManager.getOrangeColor(),
+              color: Colors.white,
               fontSize: 30.0,
               fontWeight: FontWeight.bold,
             ),
@@ -36,8 +36,8 @@ class IntroSplashScreen extends StatelessWidget {
             width: 150.0,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("icons/logo-app-sem-fundo.png"),
-                fit: BoxFit.none,
+                image: AssetImage("icons/logo-sem-fundo.png"),
+                fit: BoxFit.scaleDown,
               ),
             ),
           ),
