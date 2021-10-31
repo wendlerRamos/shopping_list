@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:shopping_list/application/shopping_list/entrypoint/shopping_list_controller.dart';
 import 'package:shopping_list/domain/shopping_list/model/shopping_list.dart';
-import 'package:shopping_list/presenter/shoppping_list/widget/form_search.dart';
-import 'package:shopping_list/presenter/shoppping_list/widget/shopping_list_tile.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/form_search.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/shopping_list_tile.dart';
 import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 class SearchListScreen extends StatefulWidget {

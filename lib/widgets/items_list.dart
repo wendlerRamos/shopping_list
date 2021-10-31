@@ -1,12 +1,13 @@
-import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:shopping_list/datas/item_data.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
-import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
-
-import '../presenter/item/widget/item_widget.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/empty_code_state_option.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/empty_data_state_option.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/error_state_option.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/list_items_state_option.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/state_options.dart';
+import 'package:shopping_list/presenter/shopping_list/controller/waiting_data_state_option.dart';
 
 class ItemsList extends StatefulWidget {
   @override
@@ -14,20 +15,18 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
+  final List<StateOptions> stateOptions = [
+    EmptyCodeStateOption(),
+    EmptyDataStateOption(),
+    ErrorStateOption(),
+    ListItemsStateOption(),
+    WaitingDataStateOption(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     String _listCode = ShoppingListStore().getCurrentList();
-    final cardContent = Expanded(
+    return Expanded(
       child: Card(
         margin: EdgeInsets.all(4.0),
         child: Padding(
@@ -40,102 +39,13 @@ class _ItemsListState extends State<ItemsList> {
                 .orderBy('status', descending: false)
                 .snapshots(),
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-              if (_listCode == null) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.announcement,
-                        size: 100.0,
-                        color: Colors.red,
-                      ),
-                      Text(
-                        "Nenhuma Lista Selecionada",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: ColorManager.getBlueColor(), fontSize: 30.0),
-                      ),
-                      Text(
-                        "Busque uma lista existente ou crie uma nova",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: ColorManager.getBlueColor(),
-                            fontSize: 15.0,
-                            fontStyle: FontStyle.italic),
-                      ),
-                    ],
-                  ),
-                );
-              }
-
-              if (!snapshot.hasData) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else if (snapshot.hasError) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.error,
-                        size: 100.0,
-                        color: Colors.red,
-                      ),
-                      Text(
-                        "Ops... Parece que algo deu errado!",
-                        style: TextStyle(color: ColorManager.getBlueColor(), fontSize: 30.0),
-                      ),
-                    ],
-                  ),
-                );
-              } else if (snapshot.data.documents.length == 0) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Icon(
-                        Icons.remove_shopping_cart,
-                        size: 100.0,
-                        color: ColorManager.getBlueColor(),
-                      ),
-                      Text(
-                        "A lista está vazia!",
-                        style: TextStyle(
-                          color: ColorManager.getBlueColor(),
-                          fontSize: 30.0,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }
-              return RefreshIndicator(
-                child: ListView(
-                  physics: BouncingScrollPhysics(
-                    parent: AlwaysScrollableScrollPhysics(),
-                  ),
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  children: snapshot.data.documents.map((DocumentSnapshot document) {
-                    ItemList _itemList = ItemList.fromDocument(document);
-                    //print(_itemList);
-                    return ItemWidget(
-                      itemList: _itemList,
-                    );
-                  }).toList(),
-                ),
-                onRefresh: _refresh,
-              );
+              return stateOptions
+                  .firstWhere((option) => option.verify(snapshot, _listCode))
+                  .execute(snapshot.data);
             },
           ),
         ),
       ),
     );
-    return cardContent;
-  }
-
-  Future<void> _refresh() async {
-    setState(() {});
   }
 }

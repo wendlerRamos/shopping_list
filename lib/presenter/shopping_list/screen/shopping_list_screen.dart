@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:shopping_list/presenter/core/controller/shopping_list_store.dart';
-import 'package:shopping_list/presenter/shoppping_list/widget/empty_code_list_form_card.dart';
-import 'package:shopping_list/presenter/shoppping_list/widget/form_card.dart';
-import 'package:shopping_list/presenter/shoppping_list/widget/shopping_list_screen_header.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/empty_code_banner_widget.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/form_card.dart';
+import 'package:shopping_list/presenter/shopping_list/widget/shopping_list_screen_header.dart';
 import 'package:shopping_list/widgets/items_list.dart';
 
 class ShoppingListScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _ShoppingListScreenState extends State<ShoppingListScreen> {
     _listCode = ShoppingListStore().getCurrentList();
 
     final _formCard =
-        (_listCode != null) ? FormCard() : EmptyCodeListFormCard();
+        (_listCode != null) ? FormCard() : EmptyCodeBannerWidget();
 
     var _scaffoldState = GlobalKey<ScaffoldState>();
     return DefaultTabController(

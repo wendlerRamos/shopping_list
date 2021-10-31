@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
-class EmptyCodeListFormCard extends StatelessWidget {
-  const EmptyCodeListFormCard({Key key}) : super(key: key);
+class EmptyCodeBannerWidget extends StatelessWidget {
+  const EmptyCodeBannerWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
