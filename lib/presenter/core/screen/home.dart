@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_list/presenter/core/widget/BottomBarItems.dart';
+import 'package:shopping_list/presenter/core/widget/bottom_bar_items.dart';
 import 'package:shopping_list/presenter/util/controller/ColorManager.dart';
 
 import '../../shoppping_list/screen/new_list_screen.dart';
